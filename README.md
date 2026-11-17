@@ -87,9 +87,9 @@ uv run python -m aeo import-raw path/to/responses --run-id baseline-2026-11-17 -
 | Engine calls through treg (176 answers, from the 2026-11-17 run) | $1.18 (ChatGPT $0.11, Gemini $0.10, AI Mode $0.10, Perplexity $0.24, Claude $0.64) |
 | Workflow compute (`flex`; about 176 runs of 15 to 45 s that mostly wait on the network) | Under $0.10 |
 | Cron job | Seconds per week; $1/month minimum per cron job |
-| Render Postgres `0.1c-256mb` | $6/month |
+| Render Postgres `free` | $0. It expires 30 days after creation. Change the plan to `0.1c-256mb` ($6/month) to keep the data. |
 
-About $1.30 per weekly run, or about $12.50 per month with the fixed costs. Dropping `claude` brings a run to about $0.55.
+About $1.30 per weekly run, or about $6.50 per month with the fixed costs ($12.50 on the paid Postgres plan). Dropping `claude` brings a run to about $0.55.
 
 On the Hobby workspace plan a workflow can start new runs worth 16 CPU per minute, so the 176 chained runs queue and start over several minutes. A full run takes 10 to 20 minutes.
 
