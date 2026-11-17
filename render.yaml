@@ -14,8 +14,8 @@ services:
           property: connectionString
       - key: TREG_TOKEN # treg team token: `treg org agent-new aeo-survey --cap 500`
         sync: false
-      # For the direct API engines, add OPENAI_API_KEY, PERPLEXITY_API_KEY,
-      # GEMINI_API_KEY or ANTHROPIC_API_KEY in the Dashboard.
+      - key: OPENROUTER_API_KEY # only for the or_* engines
+        sync: false
 
   - type: cron
     name: aeo-survey-weekly

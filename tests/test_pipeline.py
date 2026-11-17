@@ -90,8 +90,8 @@ def test_plan_jobs_runs_costly_engines_on_core_prompts_only(monkeypatch):
 
 
 def test_plan_jobs_rejects_unconfigured_engines(monkeypatch):
-    monkeypatch.delenv("OPENAI_API_KEY", raising=False)
-    with pytest.raises(ValueError, match="openai_api needs OPENAI_API_KEY"):
-        pipeline.plan_jobs("smoke", ["openai_api"])
+    monkeypatch.delenv("OPENROUTER_API_KEY", raising=False)
+    with pytest.raises(ValueError, match="or_openai needs OPENROUTER_API_KEY"):
+        pipeline.plan_jobs("smoke", ["or_openai"])
     with pytest.raises(ValueError, match="Unknown engine"):
         pipeline.plan_jobs("smoke", ["nope"])

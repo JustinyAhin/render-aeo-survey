@@ -26,7 +26,7 @@ The diff uses only the (engine, prompt) pairs that both runs share, so a change 
 - **Answers are nondeterministic.** The same prompt can name Render on Monday and not on Tuesday. One run per week is one sample. Treat a change of one or two answers per cell as noise until it repeats.
 - **Small sample.** 40 prompts, about 176 answers per run. Per-cluster rates rest on 5 to 9 answers per engine.
 - **Brand detection is regex.** `Render` is case-sensitive and skips verb uses ("render the page"), but it can still miss or over-count. Stale-fact hits are candidates for a human to check, not confirmed errors.
-- **Scraped UIs and APIs differ.** The ChatGPT, Gemini and Google AI Mode engines are scrapes of the logged-out web UI (US). The direct API engines measure the API models, which can answer differently. Do not mix the two in one trend line.
+- **Scraped UIs and APIs differ.** The ChatGPT, Gemini and Google AI Mode engines are scrapes of the logged-out web UI (US). The OpenRouter engines measure the API models, which can answer differently. Do not mix the two in one trend line.
 - **Engines change.** Models, search backends and UI layouts change without notice. A step change in one engine can be a vendor change, not a content change.
 
 ## Engines
@@ -36,7 +36,7 @@ The diff uses only the (engine, prompt) pairs that both runs share, so a change 
 | `chatgpt`, `gemini`, `google_ai_mode` | cloro web UI scrapes, through treg | `chatgpt` and `gemini` called live from the local task server; all three parsers tested on saved answers |
 | `perplexity` | Perplexity Sonar through DataForSEO, through treg | One live call from this repo; parser tested on saved answers |
 | `claude` | Claude Sonnet 4.5 with web search through DataForSEO, through treg. About $0.04 per call, so it runs on the 16 prompts marked `core`. | Parser tested on saved answers; not called live from this repo |
-| `openai_api`, `perplexity_api`, `gemini_api`, `anthropic_api` | Direct provider APIs with web search or grounding | **Untested.** Written from the official docs (2026-11-17), never called with a real key |
+| `or_openai`, `or_gemini`, `or_perplexity`, `or_claude` | API models through [OpenRouter](https://openrouter.ai/docs/guides/features/web-search), one `OPENROUTER_API_KEY`, each with its provider's native web search. Cost comes from OpenRouter's `usage.cost`. Defaults: `openai/gpt-6.1-terra`, `google/gemini-3.5-flash`, `perplexity/sonar`, `anthropic/claude-sonnet-5.5` (core prompts only). To change one, edit `MODELS` in `aeo/engines/openrouter.py`. | Parser tested on a doc-shaped payload; see below for live status |
 
 To add an engine, subclass `aeo.engines.base.Engine` (`ask` returns the raw response and its cost, `parse` returns text and cited URLs) and add it to a list in `aeo/engines/`.
 
@@ -98,7 +98,7 @@ On the Hobby workspace plan a workflow can start new runs worth 16 CPU per minut
 ```
 main.py                    workflow tasks: run_survey, ask_engine, analyze
 scripts/trigger.py         starts run_survey (the cron job's command)
-aeo/engines/               engine adapters (treg.py, direct.py)
+aeo/engines/               engine adapters (treg.py, openrouter.py)
 aeo/analysis.py            pure functions: brand detection, metrics, diff
 aeo/report.py              Markdown report
 aeo/storage.py             Postgres or local JSON store
