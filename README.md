@@ -82,8 +82,6 @@ uv run python -m aeo import-raw path/to/responses --run-id baseline-2026-11-17 -
 4. Start a cheap first run of `run_survey` with input `["smoke", ["chatgpt", "gemini"]]`.
 5. Use **Trigger Run** on the cron job for a full run, or wait for Monday.
 
-A workflow version keeps the environment variables it was released with. After you add or change a variable on the workflow, release a new version (`render workflows versions release <workflow id>`, or push a commit). Otherwise runs fail with "Engines not configured".
-
 ## Cost per run
 
 | Item | Estimate |
