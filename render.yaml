@@ -16,6 +16,8 @@ services:
         sync: false
       - key: OPENROUTER_API_KEY # only for the or_* engines
         sync: false
+      - key: ANTHROPIC_API_KEY # only for claude_api
+        sync: false
 
   - type: cron
     name: aeo-survey-weekly

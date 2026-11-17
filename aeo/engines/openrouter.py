@@ -35,21 +35,17 @@ MODELS = {
     "or_openai": "openai/gpt-6.1-terra",
     "or_gemini": "google/gemini-3.5-flash",
     "or_perplexity": "perplexity/sonar",
-    "or_claude": "anthropic/claude-sonnet-5.5",
 }
-# Costly engines run only the prompts marked "core".
-CORE_ONLY = {"or_claude"}
 # Perplexity searches on every call and rejects the web plugin, so it gets none.
 BUILT_IN_SEARCH = {"or_perplexity"}
 
 
 class OpenRouterEngine(Engine):
-    required_env = ("OPENROUTER_API_KEY",)
 
-    def __init__(self, name: str, model: str, *, core_only: bool = False):
+    def __init__(self, name: str, model: str):
         self.name = name
-        self.core_only = core_only
         self.model = model
+        self.required_env = ("OPENROUTER_API_KEY",)
         self.description = f"OpenRouter, {self.model} + native web search (API model)"
 
     def ask(self, prompt: str, *, idempotency_key: str) -> RawResult:
@@ -62,7 +58,7 @@ class OpenRouterEngine(Engine):
         if self.name not in BUILT_IN_SEARCH:
             body["plugins"] = [{"id": "web", "engine": "native"}]
         headers = {
-            "Authorization": f"Bearer {os.environ['OPENROUTER_API_KEY']}",
+            "Authorization": f"Bearer {os.environ["OPENROUTER_API_KEY"]}",
             "X-Title": "render-aeo-survey",
         }
         try:
@@ -96,5 +92,5 @@ class OpenRouterEngine(Engine):
 
 
 OPENROUTER_ENGINES = [
-    OpenRouterEngine(name, model, core_only=name in CORE_ONLY) for name, model in MODELS.items()
+    OpenRouterEngine(name, model) for name, model in MODELS.items()
 ]

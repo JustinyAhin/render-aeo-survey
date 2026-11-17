@@ -73,6 +73,10 @@ def analyze_run(run_id: str, store: Store | None = None) -> dict:
     patterns = analysis.compile_stale_patterns(load_ground_truth())
     all_answers = store.load_answers(run_id, include_failed=True)
     ok = [a for a in all_answers if not a.get("error")]
+    # Parse stored raw responses again, so a parser fix also applies to past runs.
+    for a in ok:
+        if a.get("raw") is not None and a["engine"] in ENGINES:
+            a["text"], a["urls"] = ENGINES[a["engine"]].parse(a["raw"])
     if not ok:
         store.finish_run(run_id, status="failed", finished_at=utcnow())
         raise ValueError(f"Run {run_id} has no successful answers "

@@ -3,10 +3,11 @@
 from __future__ import annotations
 
 from .base import Engine, EngineError, RawResult
+from .claude_api import CLAUDE_API_ENGINES
 from .openrouter import OPENROUTER_ENGINES
 from .treg import TREG_ENGINES
 
-ENGINES: dict[str, Engine] = {e.name: e for e in [*TREG_ENGINES, *OPENROUTER_ENGINES]}
+ENGINES: dict[str, Engine] = {e.name: e for e in [*TREG_ENGINES, *OPENROUTER_ENGINES, *CLAUDE_API_ENGINES]}
 DEFAULT_ENGINES = ["chatgpt", "gemini", "google_ai_mode", "perplexity", "claude"]
 
 

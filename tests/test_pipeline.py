@@ -30,6 +30,7 @@ def test_first_run_is_baseline_second_run_diffs(store):
     a = json.loads((store.root / "run-2/answers/chatgpt/a01.json").read_text())
     a["text"] = "Use Railway or Fly.io."
     a["urls"] = []
+    a["raw"] = None  # analyze_run re-parses raw when present; this edit has none
     store.save_answer("run-2", a)
     second = pipeline.analyze_run("run-2", store)
     assert second["previous_run_id"] == "run-1"

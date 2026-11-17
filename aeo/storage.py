@@ -173,13 +173,14 @@ class PostgresStore:
                  _jsonb(a.get("raw"))))
 
     def load_answers(self, run_id: str, *, include_failed: bool = False) -> list[dict]:
-        sql = ("SELECT engine, prompt_id, cluster, prompt, text, urls, cost_usd, error"
+        sql = ("SELECT engine, prompt_id, cluster, prompt, text, urls, cost_usd, error, raw"
                " FROM aeo_answers WHERE run_id = %s")
         if not include_failed:
             sql += " AND error IS NULL"
         with self._conn() as c:
             rows = c.execute(sql + " ORDER BY engine, prompt_id", (run_id,)).fetchall()
-        keys = ("engine", "prompt_id", "cluster", "prompt", "text", "urls", "cost_usd", "error")
+        keys = ("engine", "prompt_id", "cluster", "prompt", "text", "urls", "cost_usd", "error",
+                "raw")
         return [dict(zip(keys, r)) for r in rows]
 
     def get_run(self, run_id: str) -> dict | None:
