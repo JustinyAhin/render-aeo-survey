@@ -1,0 +1,73 @@
+{
+ "engine": "claude",
+ "tool": "dataforseo.x.ai-optimization-claude-llm-responses-live",
+ "prompt_id": "a01",
+ "cluster": "a_stack",
+ "prompt": "Where should I deploy my Django app with a Postgres database? I want something simpler than AWS.",
+ "fetched_at": "2026-11-17T04:48:02Z",
+ "treg": {
+  "http_status": 200,
+  "call_id": "cad83228627a4a9cafd4696cf482980d",
+  "charged_micro": 13416
+ },
+ "result": {
+  "version": "0.1.20261103",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "time": "10.4080 sec.",
+  "cost": 0.013416,
+  "tasks_count": 1,
+  "tasks_error": 0,
+  "tasks": [
+   {
+    "id": "11170447-2171-0612-0000-5bfbe9acc700",
+    "status_code": 20000,
+    "status_message": "Ok.",
+    "time": "10.3864 sec.",
+    "cost": 0.013416,
+    "result_count": 1,
+    "path": [
+     "v3",
+     "ai_optimization",
+     "claude",
+     "llm_responses",
+     "live"
+    ],
+    "data": {
+     "api": "ai_optimization",
+     "function": "llm_responses",
+     "se": "claude",
+     "model_name": "claude-sonnet-4-5",
+     "user_prompt": "Where should I deploy my Django app with a Postgres database? I want something simpler than AWS.",
+     "web_search": true,
+     "max_output_tokens": 1200
+    },
+    "result": [
+     {
+      "model_name": "claude-sonnet-4-5-20250929",
+      "input_tokens": 2242,
+      "output_tokens": 406,
+      "reasoning_tokens": 0,
+      "web_search": false,
+      "money_spent": 0.012816,
+      "datetime": "2026-11-17 04:48:01 +00:00",
+      "items": [
+       {
+        "type": "message",
+        "sections": [
+         {
+          "type": "text",
+          "text": "There are several excellent platforms that are simpler than AWS for deploying Django apps with Postgres. Here are the top options:\n\n## Best Options for Django + Postgres\n\n**1. Railway**\n- Very beginner-friendly with automatic deployments from Git\n- Built-in Postgres database provisioning\n- Simple pricing based on usage\n- Great for small to medium projects\n\n**2. Render**\n- Free tier available for both web services and Postgres\n- Easy configuration with render.yaml\n- Automatic SSL certificates\n- Good documentation for Django specifically\n\n**3. Fly.io**\n- Generous free tier\n- Deploy via CLI with simple commands\n- Postgres included\n- Good performance with edge deployment\n\n**4. Heroku**\n- Very mature platform with excellent Django documentation\n- Simple git-based deployment\n- Postgres add-on is straightforward\n- Free tier was discontinued, but paid plans start reasonable\n\n**5. DigitalOcean App Platform**\n- Managed platform (simpler than their droplets)\n- Good balance of simplicity and control\n- Integrated Postgres database\n- Predictable pricing\n\n**6. PythonAnywhere**\n- Specifically designed for Python apps\n- Very beginner-friendly\n- Free tier available (though Postgres requires paid plan)\n- Great for learning/small projects\n\n## My Recommendation\n\nFor most Django projects, I'd suggest **Render** or **Railway** as they offer the best balance of:\n- Simplicity (minimal configuration)\n- Cost (free tiers or affordable pricing)\n- Django-specific support and documentation\n- Managed Postgres databases\n\nBoth can deploy directly from GitHub with automatic deployments on push, and they handle SSL, environment variables, and database backups for you.\n\nWould you like specific guidance on deploying to any of these platforms?",
+          "annotations": null
+         }
+        ]
+       }
+      ],
+      "fan_out_queries": null,
+      "search_results": null
+     }
+    ]
+   }
+  ]
+ }
+}

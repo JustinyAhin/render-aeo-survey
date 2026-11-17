@@ -1,0 +1,51 @@
+{
+ "engine": "chatgpt",
+ "tool": "cloro.ai-search.chatgpt.scrape",
+ "prompt_id": "f06",
+ "cluster": "f_render",
+ "prompt": "How long does a free Postgres database last on Render?",
+ "fetched_at": "2026-11-17T04:48:59Z",
+ "treg": {
+  "http_status": 200,
+  "call_id": "fd8fc4c622ed43f987b981941c2da013",
+  "charged_micro": 2800
+ },
+ "result": {
+  "success": true,
+  "result": {
+   "model": null,
+   "text": "A free PostgreSQL database on Render lasts 30 days from the date you create it.\n\nHere's what happens:\n\nDays 1\u201330: Database works normally.\nAfter 30 days: Database expires and becomes inaccessible.\nDays 31\u201344: You have an additional 14-day grace period to upgrade to a paid plan and recover access.\nAfter 44 days: Render permanently deletes the database and its data.\n\nFree-tier limitations\n\nStorage: 1 GB\nOnly one active free PostgreSQL database per workspace.\nNo automatic backups.\nDatabase expires after 30 days.\n\nImportant\n\nIf you're using it for a personal project or portfolio, make sure to export your database before it expires.\n\nOfficial documentation: Render Free Instance Limitations\n\nMy suggestion: If you want a PostgreSQL database that's free indefinitely for a hobby project, consider:\n\nNeon\nSupabase\n\nBoth offer free PostgreSQL options with different usage limits.",
+   "sources": [
+    {
+     "position": 1,
+     "label": "Render Free Instance Limitations",
+     "url": "https://render.com/docs/free",
+     "footnote": false
+    }
+   ],
+   "entities": [
+    {
+     "type": "company",
+     "name": "Neon"
+    },
+    {
+     "type": "company",
+     "name": "Supabase"
+    }
+   ],
+   "map": [],
+   "followUpForm": null,
+   "markdown": "A free **PostgreSQL database on Render lasts 30 days** from the date you create it.\n\nHere's what happens:\n\n- **Days 1\u201330:** Database works normally.\n- **After 30 days:** Database expires and becomes inaccessible.\n- **Days 31\u201344:** You have an additional 14-day grace period to upgrade to a paid plan and recover access.\n- **After 44 days:** Render permanently deletes the database and its data.\n\n### Free-tier limitations\n- Storage: 1 GB\n- Only one active free PostgreSQL database per workspace.\n- No automatic backups.\n- Database expires after 30 days.\n\n### Important\nIf you're using it for a personal project or portfolio, make sure to export your database before it expires.\n\nOfficial documentation: [Render Free Instance Limitations](https://render.com/docs/free?utm_source=chatgpt.com)\n\n**My suggestion:** If you want a PostgreSQL database that's free indefinitely for a hobby project, consider:\n- Neon\n- Supabase\n\nBoth offer free PostgreSQL options with different usage limits.",
+   "citationPills": [
+    {
+     "url": "https://render.com/docs/free",
+     "label": "Render Free Instance Limitations",
+     "domain": "render.com",
+     "type": "groupedWebpage",
+     "citationPillId": 0,
+     "position": 1
+    }
+   ]
+  }
+ }
+}

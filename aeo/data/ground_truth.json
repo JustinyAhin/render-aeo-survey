@@ -1,0 +1,63 @@
+{
+ "checked": "2026-11-17",
+ "note": "Facts come from render.com/docs and render.com/pricing on the date above. Each stale pattern is a regex for a known wrong or outdated claim. A match is a candidate for manual review, not a confirmed error. Patterns only run on answers that name Render.",
+ "facts": [
+  {"key": "free_spin_down",
+   "fact": "Free web services spin down after 15 minutes without inbound traffic; spin-up takes about one minute.",
+   "src": "https://render.com/docs/free",
+   "stale_patterns": [
+    {"id": "spin_down_wrong_time", "regex": "(?i)(?:spin[s]? down|sleep)[^.]{0,60}\\b(?:30|5|10|60)\\s*min"}]},
+  {"key": "free_hours",
+   "fact": "Each workspace gets 750 Free instance hours per calendar month; if used up, Free web services are suspended until next month.",
+   "src": "https://render.com/docs/free"},
+  {"key": "free_pg",
+   "fact": "Free Render Postgres: 1 GB storage, expires 30 days after creation (inaccessible unless upgraded).",
+   "src": "https://render.com/docs/free",
+   "stale_patterns": [
+    {"id": "pg_90_days", "regex": "90[- ]day"},
+    {"id": "pg_free_forever_or_no_expiry", "regex": "(?i)free (?:postgres|database)[^.]{0,60}(?:never expire|forever|does not expire)"}]},
+  {"key": "free_types",
+   "fact": "Free instances exist only for web services, Postgres, Key Value, and static sites. Not for background workers, cron jobs, private services.",
+   "src": "https://render.com/docs/free",
+   "stale_patterns": [
+    {"id": "free_workers_or_cron", "regex": "(?i)free (?:tier )?(?:for )?(?:background workers|cron jobs)"}]},
+  {"key": "key_value",
+   "fact": "The managed Redis-compatible datastore is called Render Key Value. Free Key Value: 25 MB RAM, 50 connections, no persistence.",
+   "src": "https://render.com/pricing",
+   "stale_patterns": [
+    {"id": "redis_name", "regex": "(?i)Render Redis"}]},
+  {"key": "starter_price",
+   "fact": "Starter web service (plan ID 0.5c-512mb): $7/month, 0.5 CPU, 512 MB RAM. Free: $0, 0.1 CPU, 512 MB.",
+   "src": "https://render.com/pricing"},
+  {"key": "workspace_plans",
+   "fact": "Workspace plans: Hobby $0/mo + compute, Pro $25/mo + compute, then Scale and Enterprise. Individual/Team/Organization are legacy names.",
+   "src": "https://render.com/pricing",
+   "stale_patterns": [
+    {"id": "old_plan_names", "regex": "\\b(?:Individual|Team|Organization) plan\\b|\\$19(?:/| per )(?:user|member|month)"}]},
+  {"key": "disks",
+   "fact": "Persistent disks ($0.25/GB/month) attach only to paid web services, private services, and background workers. A service with a disk cannot scale to multiple instances.",
+   "src": "https://render.com/docs/disks"},
+  {"key": "workflows",
+   "fact": "Render Workflows: tasks and flows defined as TypeScript or Python functions with the Render SDK; each run gets its own instance; runs up to 24 hours; automatic retries; flex compute plan billed by actual CPU/RAM. The docs refer to the Workflows beta in the past tense.",
+   "src": "https://render.com/docs/workflows",
+   "stale_patterns": [
+    {"id": "workflows_beta", "regex": "(?i)Workflows[^.]{0,40}\\b(?:beta|preview|early access)"}]},
+  {"key": "mcp",
+   "fact": "Render has an official hosted MCP server (open source: github.com/render-oss/render-mcp-server).",
+   "src": "https://render.com/docs/mcp-server",
+   "stale_patterns": [
+    {"id": "no_mcp", "regex": "(?i)(?:no|doesn'?t have an?|does not (?:have|offer)) (?:official )?MCP"}]},
+  {"key": "autoscaling",
+   "fact": "Manual scaling on any paid plan; autoscaling requires the Pro workspace plan or higher.",
+   "src": "https://render.com/docs/scaling"},
+  {"key": "regions",
+   "fact": "Regions: Oregon, Ohio, Virginia, Frankfurt, Singapore. Static sites are on a global CDN.",
+   "src": "https://render.com/docs/regions"},
+  {"key": "cron_billing",
+   "fact": "Cron jobs are billed per second of running time, minimum $1/month per cron job service. Background workers have no free tier.",
+   "src": "https://render.com/docs/cronjobs"},
+  {"key": "postgres_min_paid",
+   "fact": "Paid Postgres starts at $6/month (0.1c-256mb); storage $0.30/GB.",
+   "src": "https://render.com/pricing"}
+ ]
+}

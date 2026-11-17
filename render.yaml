@@ -1,0 +1,45 @@
+# Render Blueprint: the workflow, a weekly cron job that triggers it, and Postgres.
+# Spec: https://render.com/docs/blueprint-spec
+services:
+  - type: workflow
+    name: aeo-survey
+    runtime: python
+    region: oregon # required for workflows; the database must be in the same region
+    buildCommand: pip install -r requirements.txt
+    startCommand: python main.py
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: aeo-survey-db
+          property: connectionString
+      - key: TREG_TOKEN # treg team token: `treg org agent-new aeo-survey --cap 500`
+        sync: false
+      # For the direct API engines, add OPENAI_API_KEY, PERPLEXITY_API_KEY,
+      # GEMINI_API_KEY or ANTHROPIC_API_KEY in the Dashboard.
+
+  - type: cron
+    name: aeo-survey-weekly
+    runtime: python
+    region: oregon
+    schedule: "0 6 * * 1" # Mondays 06:00 UTC
+    buildCommand: pip install -r requirements.txt
+    startCommand: python scripts/trigger.py
+    envVars:
+      - key: RENDER_API_KEY # used by the Render SDK to start the run
+        sync: false
+      - key: WORKFLOW_SLUG
+        fromService:
+          type: workflow
+          name: aeo-survey
+          property: slug
+      - key: AEO_PROMPT_SET
+        value: default
+      - key: AEO_ENGINES
+        value: chatgpt,gemini,google_ai_mode,perplexity,claude
+
+databases:
+  - name: aeo-survey-db
+    plan: 0.1c-256mb # $6/month; the free plan expires after 30 days
+    region: oregon
+    databaseName: aeo
+    ipAllowList: [] # private network only

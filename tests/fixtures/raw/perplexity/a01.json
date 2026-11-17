@@ -1,0 +1,204 @@
+{
+ "engine": "perplexity",
+ "tool": "dataforseo.x.ai-optimization-perplexity-llm-responses-live",
+ "prompt_id": "a01",
+ "cluster": "a_stack",
+ "prompt": "Where should I deploy my Django app with a Postgres database? I want something simpler than AWS.",
+ "fetched_at": "2026-11-17T04:53:03Z",
+ "treg": {
+  "http_status": 200,
+  "call_id": "13bf8b51223e444ba57a0a98cfc4d2b2",
+  "charged_micro": 6018
+ },
+ "result": {
+  "version": "0.1.20261103",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "time": "4.5218 sec.",
+  "cost": 0.006018,
+  "tasks_count": 1,
+  "tasks_error": 0,
+  "tasks": [
+   {
+    "id": "11170452-2171-0612-0000-4db032aad56f",
+    "status_code": 20000,
+    "status_message": "Ok.",
+    "time": "4.4677 sec.",
+    "cost": 0.006018,
+    "result_count": 1,
+    "path": [
+     "v3",
+     "ai_optimization",
+     "perplexity",
+     "llm_responses",
+     "live"
+    ],
+    "data": {
+     "api": "ai_optimization",
+     "function": "llm_responses",
+     "se": "perplexity",
+     "model_name": "sonar",
+     "user_prompt": "Where should I deploy my Django app with a Postgres database? I want something simpler than AWS.",
+     "web_search_country_iso_code": "US"
+    },
+    "result": [
+     {
+      "model_name": "sonar",
+      "input_tokens": 27,
+      "output_tokens": 391,
+      "reasoning_tokens": 0,
+      "web_search": true,
+      "money_spent": 0.005418,
+      "datetime": "2026-11-17 04:53:02 +00:00",
+      "items": [
+       {
+        "type": "message",
+        "sections": [
+         {
+          "type": "text",
+          "text": "For the simplest AWS alternative, use **Render** or **Railway**:\n\n- **Render** \u2014 Best default for a conventional Django app. Connect your GitHub repository, create a web service and managed PostgreSQL database, add environment variables, and configure build/start commands. It offers a familiar PaaS workflow and is a strong choice for production apps.\n- **Railway** \u2014 Probably the fastest setup. Add a Django service and PostgreSQL to one project, then deploy from GitHub. Railway supplies the database connection details through environment variables; Django deployment guidance specifically demonstrates this workflow.[1]\n- **Heroku** \u2014 Still one of the simplest options conceptually: deploy the app and attach Postgres. It is particularly convenient if you want extensive Django documentation and add-ons.\n- **DigitalOcean App Platform** \u2014 A good middle ground if you prefer DigitalOcean\u2019s pricing and interface. It is simpler than AWS, though generally a little more infrastructure-oriented than Render or Railway.\n- **Fly.io** \u2014 Good when you want Docker-level control, background workers, or multiple regions, but it requires more operational knowledge than the options above.[4]\n\n## Recommendation\n\nStart with **Render** if this is a normal web app and you want the least operational work. Choose **Railway** if you want the quickest GitHub-to-deployment experience or are still experimenting.\n\nUse:\n\n- **Gunicorn** to serve Django\n- **Managed PostgreSQL**, not SQLite\n- **Environment variables** for `SECRET_KEY`, `DATABASE_URL`, and other secrets\n- A deployment command that runs `python manage.py migrate`\n- WhiteNoise or object storage for static and media files\n- A separate worker service if you use Celery\n\nDjango\u2019s deployment guidance describes the standard pattern of hosting Postgres separately and passing its connection string through `DATABASE_URL`.[1] Managed platforms typically handle database provisioning, backups, and resizing, avoiding much of the setup required with AWS.[7]",
+          "annotations": [
+           {
+            "title": "Django Tutorial Part 11: Deploying Django to production",
+            "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Django/Deployment",
+            "start_index": null,
+            "end_index": null,
+            "text": null
+           },
+           {
+            "title": "Tutorial: Deploy a Python Django web app with PostgreSQL ...",
+            "url": "https://learn.microsoft.com/en-us/azure/app-service/tutorial-python-postgresql-app-django",
+            "start_index": null,
+            "end_index": null,
+            "text": null
+           },
+           {
+            "title": "How to Add Postgres to Django (psycopg, Pooling, Encore)",
+            "url": "https://encore.dev/articles/add-postgres-to-django",
+            "start_index": null,
+            "end_index": null,
+            "text": null
+           },
+           {
+            "title": "Best Django Hosting Providers in 2026 (Compared)",
+            "url": "https://www.fly.io/learn/django-hosting/",
+            "start_index": null,
+            "end_index": null,
+            "text": null
+           },
+           {
+            "title": "Deploy and scale Django applications on AWS App Runner | Containers",
+            "url": "https://aws.amazon.com/blogs/containers/deploy-and-scale-django-applications-on-aws-app-runner/",
+            "start_index": null,
+            "end_index": null,
+            "text": null
+           },
+           {
+            "title": "GitHub - dsble824/django-digitalocean-deploy: Deploy Django ...",
+            "url": "https://github.com/dsble824/django-digitalocean-deploy",
+            "start_index": null,
+            "end_index": null,
+            "text": null
+           },
+           {
+            "title": "The Essential Django Deployment Guide",
+            "url": "https://www.saaspegasus.com/guides/django-deployment/",
+            "start_index": null,
+            "end_index": null,
+            "text": null
+           },
+           {
+            "title": "Django Hosting: What It Costs in 2026",
+            "url": "https://appliku.com/django-hosting",
+            "start_index": null,
+            "end_index": null,
+            "text": null
+           },
+           {
+            "title": "Deploy & Host Postgres HA Django",
+            "url": "https://railway.com/deploy/postgres-ha-django--deploy-postgres-ha-for-django-apps",
+            "start_index": null,
+            "end_index": null,
+            "text": null
+           },
+           {
+            "title": "What is the Best Online Database?",
+            "url": "https://www.reddit.com/r/django/comments/1ebpuov/what_is_the_best_online_database/",
+            "start_index": null,
+            "end_index": null,
+            "text": null
+           }
+          ]
+         }
+        ]
+       }
+      ],
+      "fan_out_queries": null,
+      "search_results": [
+       {
+        "title": "Django Tutorial Part 11: Deploying Django to production",
+        "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Django/Deployment",
+        "date": "2026-10-30 00:00:00 +00:00",
+        "snippet": "# Django Tutorial Part 11: Deploying Django to production\n## Choosing a hosting provider\nThere are many hosting providers that are known to either actively support or work well with Django, including: Heroku, DigitalOcean, Railway, Python Anywhere, Amazon Web Services, Azure, Google Cloud, Hetzner, ..."
+       },
+       {
+        "title": "Tutorial: Deploy a Python Django web app with PostgreSQL ...",
+        "url": "https://learn.microsoft.com/en-us/azure/app-service/tutorial-python-postgresql-app-django",
+        "date": "2026-10-31 00:00:00 +00:00",
+        "snippet": "In this tutorial, you deploy a data-driven Python web app to Azure App Service that uses the Azure Database for PostgreSQL relational database service.\nTo use Azure Managed Redis, follow the Azure Developer CLI steps.\nAzure App Service supports Python in a Linux server environment.\nThis article uses..."
+       },
+       {
+        "title": "How to Add Postgres to Django (psycopg, Pooling, Encore)",
+        "url": "https://encore.dev/articles/add-postgres-to-django",
+        "date": "2026-11-16 00:00:00 +00:00",
+        "snippet": "|Capability|Encore|dj-database-url|Hand-written settings|\n|--|--|--|--|\n|**Connection details**|From the declared database through `db.connection_string`|Parsed from `DATABASE_URL`|Separate environment variables|\n|**ORM and migrations**|Standard Django ORM and `manage.py migrate`|Standard|Standard|\n..."
+       },
+       {
+        "title": "Best Django Hosting Providers in 2026 (Compared)",
+        "url": "https://www.fly.io/learn/django-hosting/",
+        "date": "2026-11-14 00:00:00 +00:00",
+        "snippet": "A Django app in production needs five things: an application server, a way to serve static files, a Postgres database with migrations run on deploy, secrets kept out of the repository, and a process for background work.\n...\nThe best Django hosting provider in 2026 is Fly.io, because it detects a Dja..."
+       },
+       {
+        "title": "Deploy and scale Django applications on AWS App Runner | Containers",
+        "url": "https://aws.amazon.com/blogs/containers/deploy-and-scale-django-applications-on-aws-app-runner/",
+        "date": "2026-10-27 00:00:00 +00:00",
+        "snippet": "- An AWS App Runner service running your Django application in an AWS-managed VPC.\n- An RDS for PostgreSQL database instance running in your own customer-managed VPC.\nApp Runner privately connects to the RDS instance using AWS PrivateLink.\n...\nAWS App Runner enables you to deploy from a GitHub repos..."
+       },
+       {
+        "title": "GitHub - dsble824/django-digitalocean-deploy: Deploy Django ...",
+        "url": "https://github.com/dsble824/django-digitalocean-deploy",
+        "date": "2026-11-01 00:00:00 +00:00",
+        "snippet": "Django 1-Click Marketplace Droplet** \u2014 a pre-baked Ubuntu 24.04 image with Django 6.0.8, Nginx, Gunicorn, Postgres, Certbot, and Postfix already installed.\n...\nManual Droplet + Nginx + Gunicorn + Postgres** \u2014 the classic DigitalOcean tutorial path.\nSpin up a blank Ubuntu Droplet, install everything ..."
+       },
+       {
+        "title": "The Essential Django Deployment Guide",
+        "url": "https://www.saaspegasus.com/guides/django-deployment/",
+        "date": "2026-11-16 00:00:00 +00:00",
+        "snippet": "If this is your first time setting up a production app, or are interested in switching off your current host,\nI would try one of Heroku, Render, or Fly.io.\n...\nIn the VPS world things are simpler, and the decision is even lower stakes.\n...\n**If you're not sure which you want, this guide recommends g..."
+       },
+       {
+        "title": "Django Hosting: What It Costs in 2026",
+        "url": "https://appliku.com/django-hosting",
+        "date": "2026-10-26 00:00:00 +00:00",
+        "snippet": "A real Django app needs a web process, a Postgres database, static files, HTTPS, and usually a\nbackground worker.\n...\nOne server runs the whole stack: your web process, Postgres, Redis, and your workers, all in\ncontainers.\n...\n- **A real Postgres database**\nSQLite is fine on your laptop and painful ..."
+       },
+       {
+        "title": "Deploy & Host Postgres HA Django",
+        "url": "https://railway.com/deploy/postgres-ha-django--deploy-postgres-ha-for-django-apps",
+        "date": "2026-11-11 00:00:00 +00:00",
+        "snippet": "## Deploy and Host self hosted Postgres HA Django (Highly Available Postgres for Django) on Railway\nThis template gives Django a three-node Patroni Postgres cluster behind a router, with the primary on port 5432 and a replica on 5433.\n...\nThis template runs a three-node Patroni cluster with etcd, Po..."
+       },
+       {
+        "title": "What is the Best Online Database?",
+        "url": "https://www.reddit.com/r/django/comments/1ebpuov/what_is_the_best_online_database/",
+        "date": "2025-11-03 00:00:00 +00:00",
+        "snippet": "You can start with a VPS on DigitalOcean or Hetzner for <$5.\nThere are a plethora of articles out there on how to set it up.\nAlternatively you can run docker containers on that VPS.\nOne for Django and one for Posgres.\nIf you want a managed database, which is a good idea for high volume or highly sen..."
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

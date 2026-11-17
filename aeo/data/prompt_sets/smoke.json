@@ -1,0 +1,35 @@
+{
+ "name": "smoke",
+ "description": "3 prompts for cheap end-to-end checks.",
+ "clusters": {
+  "a_stack": "Where to deploy an app on a given stack",
+  "b_ai": "AI workloads: agents, MCP servers, LLM pipelines, durable workflows",
+  "c_alt": "Alternatives to a named platform",
+  "d_infra": "Infrastructure needs: Postgres, Redis, cron, WebSockets, workers",
+  "e_compare": "Render vs a named competitor (branded)",
+  "f_render": "Questions about Render facts (branded)"
+ },
+ "branded_clusters": [
+  "e_compare",
+  "f_render"
+ ],
+ "prompts": [
+  {
+   "id": "a01",
+   "cluster": "a_stack",
+   "prompt": "Where should I deploy my Django app with a Postgres database? I want something simpler than AWS.",
+   "core": true
+  },
+  {
+   "id": "b06",
+   "cluster": "b_ai",
+   "prompt": "What is a good durable workflow engine for AI tasks with retries?",
+   "core": true
+  },
+  {
+   "id": "f06",
+   "cluster": "f_render",
+   "prompt": "How long does a free Postgres database last on Render?"
+  }
+ ]
+}

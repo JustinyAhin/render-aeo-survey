@@ -1,0 +1,67 @@
+{
+ "engine": "google_ai_mode",
+ "tool": "cloro.google.serp.ai_mode",
+ "prompt_id": "b06",
+ "cluster": "b_ai",
+ "prompt": "What is a good durable workflow engine for AI tasks with retries?",
+ "fetched_at": "2026-11-17T04:52:40Z",
+ "treg": {
+  "http_status": 200,
+  "call_id": "c75a26004d8745ed9e592143395877f3",
+  "charged_micro": 2400
+ },
+ "result": {
+  "success": true,
+  "result": {
+   "text": "When building AI workflows (multi-step LLM calls, tool-use loops, human-in-the-loop approvals, or long-running agent tasks), a durable workflow engine prevents losing state when an API times out, a model hallucinates, or a server crashes.\n\nThe top options vary depending on your stack, whether you want code-first vs. serverless, and how deeply you are building AI agents:\n\nTop Durable Workflow Engines for AI\n\nInngest (Best all-around for TypeScript/Python & AI agents)\n\nWhy it fits AI: Features built-in step controls, streaming support, easy handling of rate limits/backpressure, and high developer satisfaction for agentic loops.\nRetries & Durability: 4 default retries with custom onFailure handlers, step-by-step memoization, and great visibility via their dashboard.\nGet started: Check out Inngest.\n\nTemporal (Best for heavy, complex, mission-critical distributed systems)\n\nWhy it fits AI: The gold standard for ultra-reliable state management. If your AI workflow spans days, interacts with external Webhooks, or requires complex compensation logic (Sagas), Temporal won't drop a bit.\nRetries & Durability: Workflows run as code; activities retry indefinitely (or with granular backoff policies) by default. Steep learning curve, requires running Temporal Server (or Temporal Cloud).\nGet started: Explore Temporal.io.\n\nTrigger.dev (Best for AI-native and background job integration)\n\nWhy it fits AI: Built specifically to handle long-running code execution (like running heavy Python/TS scripts, scraping, or multi-model chains) without hitting serverless timeouts.\nRetries & Durability: 3 default attempts with a visual dashboard for bulk-replaying failed runs.\nGet started: See Trigger.dev.\n\nUpstash Workflow (Best for Edge/Serverless & HTTP-based setups)\n\nWhy it fits AI: Zero-infrastructure, queue-less workflow engine that works over simple HTTP endpoints (great for Vercel, Cloudflare Workers, or Deno Deploy).\nRetries & Durability: Retries each step 3 times with exponential backoff; if it permanently fails, it pushes to a Dead Letter Queue (DLQ) where you can resume or restart from specific steps.\nGet started: Read the Upstash Workflow Docs.\n\nRestate / DBOS (Best for transactional consistency & database-backed state)\n\nWhy it fits AI: Treats application code like a database transaction\u2014if an AI step crashes halfway, it rolls back or resumes deterministically without duplicate side-effects (like double-charging an API or sending duplicate emails).\nGet started: Check out Restate.dev or DBOS.dev.\n\nQuick Comparison Matrix\n\nEngine\nPrimary Language / Stack\nBest Use Case\nRetry Defaults\nInngest\nTypeScript, Python\nAI agents & event-driven product flows\n4 retries + onFailure\nTemporal\nGo, Java, Python, TS, etc.\nMission-critical, long-running systems\nIndefinite/configurable per activity\nTrigger.dev\nTypeScript, Python\nHeavy background tasks & long compute\n3 attempts + bulk replay\nUpstash Workflow\nAny (HTTP/Edge-based)\nServerless / Edge (Vercel, Cloudflare)\n3 retries + DLQ support\n\nTo help narrow down the best fit, tell me:\n\nWhat language/framework is your AI application written in?\nAre you building linear multi-step prompts or autonomous agent loops with tool calling?\nWill this run on serverless (Vercel/AWS Lambda) or a long-lived server/container?",
+   "sources": [
+    {
+     "position": 1,
+     "label": "Durable Workflow Engines in 2026: Every Major Option Compared",
+     "url": "https://upstash.com/blog/durable-workflow-engines-compared-every-major-option-in-2026",
+     "description": "Workflow retries each step 3 times by default with exponential backoff, options: resume from the failed step \u2026 or re-fire the fail...",
+     "redirectLink": "https://www.google.com/goto?url=CAESkgEBxCJF1zAMe-6GXfR9LlGDClTwmC5CA2dWycTaZiPa26FzRO2l0G1ZBTanD5VKoPUZ_DfKjGkjKXhWJNCrNPbNnXpmbpFl-glib9NKNDtXJJYpMeQBeJzDzrSy1nqWy9rq6L77ihRVut7ZMasMhHqBrno9aS_BrL1pnQ3EM_vxkw8GIEf2hnF9AduCVzAuJI_sQQ"
+    }
+   ],
+   "citationPills": [
+    {
+     "label": "Durable Workflow Engines in 2026: Every Major Option Compared",
+     "citationPillId": 1,
+     "url": "https://upstash.com/blog/durable-workflow-engines-compared-every-major-option-in-2026",
+     "domain": "upstash.com",
+     "description": "Workflow retries each step 3 times by default with exponential backoff, options: resume from the failed step \u2026 or re-fire the fail...",
+     "position": 1,
+     "redirectLink": "https://www.google.com/goto?url=CAESkgEBxCJF1zAMe-6GXfR9LlGDClTwmC5CA2dWycTaZiPa26FzRO2l0G1ZBTanD5VKoPUZ_DfKjGkjKXhWJNCrNPbNnXpmbpFl-glib9NKNDtXJJYpMeQBeJzDzrSy1nqWy9rq6L77ihRVut7ZMasMhHqBrno9aS_BrL1pnQ3EM_vxkw8GIEf2hnF9AduCVzAuJI_sQQ"
+    },
+    {
+     "label": "Durable Workflow Engines in 2026: Every Major Option Compared",
+     "citationPillId": 2,
+     "url": "https://upstash.com/blog/durable-workflow-engines-compared-every-major-option-in-2026",
+     "domain": "upstash.com",
+     "description": "Workflow retries each step 3 times by default with exponential backoff, options: resume from the failed step \u2026 or re-fire the fail...",
+     "position": 1,
+     "redirectLink": "https://www.google.com/goto?url=CAESkgEBxCJF1zAMe-6GXfR9LlGDClTwmC5CA2dWycTaZiPa26FzRO2l0G1ZBTanD5VKoPUZ_DfKjGkjKXhWJNCrNPbNnXpmbpFl-glib9NKNDtXJJYpMeQBeJzDzrSy1nqWy9rq6L77ihRVut7ZMasMhHqBrno9aS_BrL1pnQ3EM_vxkw8GIEf2hnF9AduCVzAuJI_sQQ"
+    },
+    {
+     "label": "Durable Workflow Engines in 2026: Every Major Option Compared",
+     "citationPillId": 3,
+     "url": "https://upstash.com/blog/durable-workflow-engines-compared-every-major-option-in-2026",
+     "domain": "upstash.com",
+     "description": "Workflow retries each step 3 times by default with exponential backoff, options: resume from the failed step \u2026 or re-fire the fail...",
+     "position": 1,
+     "redirectLink": "https://www.google.com/goto?url=CAESkgEBxCJF1zAMe-6GXfR9LlGDClTwmC5CA2dWycTaZiPa26FzRO2l0G1ZBTanD5VKoPUZ_DfKjGkjKXhWJNCrNPbNnXpmbpFl-glib9NKNDtXJJYpMeQBeJzDzrSy1nqWy9rq6L77ihRVut7ZMasMhHqBrno9aS_BrL1pnQ3EM_vxkw8GIEf2hnF9AduCVzAuJI_sQQ"
+    },
+    {
+     "label": "Durable Workflow Engines in 2026: Every Major Option Compared",
+     "citationPillId": 4,
+     "url": "https://upstash.com/blog/durable-workflow-engines-compared-every-major-option-in-2026",
+     "domain": "upstash.com",
+     "description": "Workflow retries each step 3 times by default with exponential backoff, options: resume from the failed step \u2026 or re-fire the fail...",
+     "position": 1,
+     "redirectLink": "https://www.google.com/goto?url=CAESkgEBxCJF1zAMe-6GXfR9LlGDClTwmC5CA2dWycTaZiPa26FzRO2l0G1ZBTanD5VKoPUZ_DfKjGkjKXhWJNCrNPbNnXpmbpFl-glib9NKNDtXJJYpMeQBeJzDzrSy1nqWy9rq6L77ihRVut7ZMasMhHqBrno9aS_BrL1pnQ3EM_vxkw8GIEf2hnF9AduCVzAuJI_sQQ"
+    }
+   ],
+   "markdown": "When building AI workflows (multi-step LLM calls, tool-use loops, human-in-the-loop approvals, or long-running agent tasks), a **durable workflow engine** prevents losing state when an API times out, a model hallucinates, or a server crashes.\n\nThe top options vary depending on your stack, whether you want code-first vs. serverless, and how deeply you are building AI agents:\n\n* * *\n\nTop Durable Workflow Engines for AI\n\n  1. **Inngest** _(Best all-around for TypeScript/Python & AI agents)_\n     * **Why it fits AI:** Features built-in step controls, streaming support, easy handling of rate limits/backpressure, and high developer satisfaction for agentic loops.\n     * **Retries & Durability:** 4 default retries with custom `onFailure` handlers, step-by-step memoization, and great visibility via their dashboard.\n     * **Get started:** Check out Inngest. [Durable Workflow Engines in 2026: Every Major Option Compared](https://upstash.com/blog/durable-workflow-engines-compared-every-major-option-in-2026)\n  2. **Temporal** _(Best for heavy, complex, mission-critical distributed systems)_\n     * **Why it fits AI:** The gold standard for ultra-reliable state management. If your AI workflow spans days, interacts with external Webhooks, or requires complex compensation logic (Sagas), Temporal won't drop a bit.\n     * **Retries & Durability:** Workflows run as code; activities retry indefinitely (or with granular backoff policies) by default. Steep learning curve, requires running Temporal Server (or Temporal Cloud).\n     * **Get started:** Explore Temporal.io. [Durable Workflow Engines in 2026: Every Major Option Compared](https://upstash.com/blog/durable-workflow-engines-compared-every-major-option-in-2026)\n  3. **Trigger.dev** _(Best for AI-native and background job integration)_\n     * **Why it fits AI:** Built specifically to handle long-running code execution (like running heavy Python/TS scripts, scraping, or multi-model chains) without hitting serverless timeouts.\n     * **Retries & Durability:** 3 default attempts with a visual dashboard for bulk-replaying failed runs.\n     * **Get started:** See Trigger.dev. [Durable Workflow Engines in 2026: Every Major Option Compared](https://upstash.com/blog/durable-workflow-engines-compared-every-major-option-in-2026)\n  4. **Upstash Workflow** _(Best for Edge/Serverless & HTTP-based setups)_\n     * **Why it fits AI:** Zero-infrastructure, queue-less workflow engine that works over simple HTTP endpoints (great for Vercel, Cloudflare Workers, or Deno Deploy).\n     * **Retries & Durability:** Retries each step 3 times with exponential backoff; if it permanently fails, it pushes to a Dead Letter Queue (DLQ) where you can resume or restart from specific steps.\n     * **Get started:** Read the Upstash Workflow Docs. [Durable Workflow Engines in 2026: Every Major Option Compared](https://upstash.com/blog/durable-workflow-engines-compared-every-major-option-in-2026)\n  5. **Restate / DBOS** _(Best for transactional consistency & database-backed state)_\n     * **Why it fits AI:** Treats application code like a database transaction\u2014if an AI step crashes halfway, it rolls back or resumes deterministically without duplicate side-effects (like double-charging an API or sending duplicate emails).\n     * **Get started:** Check out Restate.dev or DBOS.dev.\n\n* * *\n\nQuick Comparison Matrix\n\n| Engine               | Primary Language / Stack    | Best Use Case                          | Retry Defaults                       |\n|----------------------|-----------------------------|----------------------------------------|--------------------------------------|\n| **Inngest**          |  TypeScript, Python         | AI agents & event-driven product flows | 4 retries + `onFailure`              |\n| **Temporal**         |  Go, Java, Python, TS, etc. | Mission-critical, long-running systems | Indefinite/configurable per activity |\n| **Trigger.dev**      |  TypeScript, Python         | Heavy background tasks & long compute  | 3 attempts + bulk replay             |\n| **Upstash Workflow** |  Any (HTTP/Edge-based)      | Serverless / Edge (Vercel, Cloudflare) | 3 retries + DLQ support              |\n\nTo help narrow down the best fit, tell me:\n\n  * What **language/framework** is your AI application written in?\n  * Are you building **linear multi-step prompts** or **autonomous agent loops** with tool calling?\n  * Will this run on **serverless (Vercel/AWS Lambda)** or a **long-lived server/container**?"
+  }
+ }
+}

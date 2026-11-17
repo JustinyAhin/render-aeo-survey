@@ -1,0 +1,22 @@
+[project]
+name = "render-aeo-survey"
+version = "0.1.0"
+description = "Weekly answer-engine (AEO) citation survey for Render, run on Render Workflows"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.11"
+dependencies = [
+    "render>=1.9.0",
+    "httpx>=0.27",
+    "psycopg[binary]>=3.2",
+]
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.uv]
+package = false

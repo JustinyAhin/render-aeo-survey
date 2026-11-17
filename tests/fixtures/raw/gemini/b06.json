@@ -1,0 +1,122 @@
+{
+ "engine": "gemini",
+ "tool": "cloro.ai-search.gemini.scrape",
+ "prompt_id": "b06",
+ "cluster": "b_ai",
+ "prompt": "What is a good durable workflow engine for AI tasks with retries?",
+ "fetched_at": "2026-11-17T04:50:01Z",
+ "treg": {
+  "http_status": 200,
+  "call_id": "fab4d10d0a864beda445fe627c1a6cd5",
+  "charged_micro": 2400
+ },
+ "result": {
+  "success": true,
+  "result": {
+   "text": "When building AI tasks, pipelines, or multi-step agent loops that require robust retries, state persistence, and error handling, several durable workflow engines stand out depending on your stack and deployment preferences:\n\n1. Temporal (The Industry Standard for Code-As-Workflow)\n\nBest for: Complex, long-running agentic loops, enterprise-grade reliability, and polyglot architectures.\n\nWhy it fits AI tasks: Temporal treats your workflow as code (available in Python, TypeScript, Go, Java, etc.). It automatically checkpoints every step. If an LLM API rate-limits, times out, or your server crashes mid-execution, Temporal isolates the failure to that specific \"activity,\" retries it with exponential backoff, and resumes the workflow right where it left off without re-running previous expensive model calls.\n\nTrade-off: Requires running a Temporal Cluster (though Temporal Cloud abstracts this).\n\n2. Inngest (Best for TypeScript & Serverless/Web Applications)\n\nBest for: Developers building AI features inside web apps, serverless environments, or standard Node.js/TypeScript codebases.\n\nWhy it fits AI tasks: Inngest lets you write background jobs and step-based workflows using native code without provisioning complex state-machine infrastructure. It provides built-in rate-limiting, concurrency controls, automatic step-level retries, and step checkpointing. It integrates smoothly with modern AI frameworks (like the Vercel AI SDK).\n\nTrade-off: Primarily optimized for TypeScript/JavaScript ecosystems.\n\n3. Prefect or Dagster (Best for Data Pipelines & Heavy LLM Processing)\n\nBest for: RAG (Retrieval-Augmented Generation) pipelines, batch document processing, embedding generation, and data-heavy AI workflows.\n\nWhy it fits AI tasks: While historically built for data engineering, their modern task-orchestration models handle retries, timeouts, and state tracking natively. If your AI task involves heavy data preparation, chunking, and calling LLMs across thousands of files, these tools offer unmatched visibility and data lineage.\n\nTrade-off: Less suited for real-time, event-driven agent loops compared to Temporal or Inngest.\n\nKey Architectural Rule for AI Workflows\n\nWhichever engine you choose, remember the golden rule of durable AI workflows: Isolate non-deterministic code (like LLM generations or random tool outputs) into isolated \"activities\" or \"steps.\" Because workflow engines use replay mechanics to recover from crashes, your core workflow logic must remain deterministic, letting the engine record and replay the saved outputs of your AI calls.",
+   "sources": [
+    {
+     "position": 1,
+     "label": "Durable Execution for AI Agents: State, Checkpointing, Retries and",
+     "url": "https://medium.com/@serifcolakel/durable-execution-for-ai-agents-state-checkpointing-retries-and-human-in-the-loop-bb87a8da3a5b#:~:text=A%20durable%20execution%20engine%20provides%20the%20infrastructure,and%20publishes%20it%20to%20an%20external%20system.",
+     "description": "A durable execution engine provides the infrastructure for retries, but the \napplication still needs to define what should be retried and why. 4. The \nMost Import..."
+    },
+    {
+     "position": 2,
+     "label": "Temporal: Durable Execution Solutions",
+     "url": "https://temporal.io/#:~:text=APIs%20fail%2C%20networks%20time%20out%2C%20and%20users,always%20picks%20up%20where%20it%20left%20off.",
+     "description": "APIs fail, networks time out, and users abandon sessions. Temporal treats \nthese interactions as Activities: functions that retry automatically and \nrecover seaml..."
+    },
+    {
+     "position": 3,
+     "label": "Temporal: Durable Execution Solutions",
+     "url": "https://temporal.io/#:~:text=*%20Write%20code%20as%20if%20failure%20doesn't,Works.%20Create%20failproof%20apps%20using%20our%20SDKs.",
+     "description": "* Write code as if failure doesn't exist. Distributed systems break, APIs \nfail, networks flake, and services crash. That's not your problem anymore. \nManaging re..."
+    },
+    {
+     "position": 4,
+     "label": "Inngest: Durable Execution for Workflows & AI",
+     "url": "https://www.inngest.com/#:~:text=No%20infrastructure%20to%20provision%20or%20maintain.%20*,Learn%20More%E2%86%92%20*%20Scheduled%20%26%20cron%20jobs.",
+     "description": "No infrastructure to provision or maintain. * Background jobs. One line in \nyour code makes any background job reliable. Automatic retries, recovery, \nand observa..."
+    },
+    {
+     "position": 5,
+     "label": "Inngest: Durable Execution for Workflows & AI",
+     "url": "https://www.inngest.com/#:~:text=Durable%20message%20queues%20without%20the%20infrastructure%E2%80%94no%20Redis,Events.%20Handle%20webhooks%20and%20event%2Ddriven%20functions%20reliably.",
+     "description": "Durable message queues without the infrastructure\u2014no Redis or broker, with \nbuilt-in flow control. Learn More\u2192 * Workflow orchestration. Multi-step \nworkflow orch..."
+    },
+    {
+     "position": 6,
+     "label": "What is durable execution? Reliable long-running workflows",
+     "url": "https://decagon.ai/glossary/what-is-durable-execution#:~:text=Workflow%20code%20has%20to%20make%20the%20same,part%20of%20the%20logic%20that%20gets%20replayed.",
+     "description": "Workflow code has to make the same decisions every time it runs against the \nsame history, so it can't read the clock, pick random numbers or call \noutside servic..."
+    },
+    {
+     "position": 7,
+     "label": "What is durable execution? Reliable long-running workflows",
+     "url": "https://decagon.ai/glossary/what-is-durable-execution#:~:text=When%20a%20server%20dies%20mid%2Dtask%2C%20another%20one,with%20retries%20and%20timeouts%20set%20in%20configuration.",
+     "description": "When a server dies mid-task, another one reads the log and reruns the \nworkflow code from the top. This is called replay. Whenever the code \nreaches a step the lo..."
+    }
+   ],
+   "citationPills": [
+    {
+     "label": "Durable Execution for AI Agents: State, Checkpointing, Retries and",
+     "url": "https://medium.com/@serifcolakel/durable-execution-for-ai-agents-state-checkpointing-retries-and-human-in-the-loop-bb87a8da3a5b#:~:text=A%20durable%20execution%20engine%20provides%20the%20infrastructure,and%20publishes%20it%20to%20an%20external%20system.",
+     "domain": "medium.com",
+     "position": 1,
+     "description": "A durable execution engine provides the infrastructure for retries, but the \napplication still needs to define what should be retried and why. 4. The \nMost Import...",
+     "citationPillId": 1
+    },
+    {
+     "label": "Temporal: Durable Execution Solutions",
+     "url": "https://temporal.io/#:~:text=APIs%20fail%2C%20networks%20time%20out%2C%20and%20users,always%20picks%20up%20where%20it%20left%20off.",
+     "domain": "temporal.io",
+     "position": 2,
+     "description": "APIs fail, networks time out, and users abandon sessions. Temporal treats \nthese interactions as Activities: functions that retry automatically and \nrecover seaml...",
+     "citationPillId": 2
+    },
+    {
+     "label": "Temporal: Durable Execution Solutions",
+     "url": "https://temporal.io/#:~:text=*%20Write%20code%20as%20if%20failure%20doesn't,Works.%20Create%20failproof%20apps%20using%20our%20SDKs.",
+     "domain": "temporal.io",
+     "position": 3,
+     "description": "* Write code as if failure doesn't exist. Distributed systems break, APIs \nfail, networks flake, and services crash. That's not your problem anymore. \nManaging re...",
+     "citationPillId": 2
+    },
+    {
+     "label": "Inngest: Durable Execution for Workflows & AI",
+     "url": "https://www.inngest.com/#:~:text=No%20infrastructure%20to%20provision%20or%20maintain.%20*,Learn%20More%E2%86%92%20*%20Scheduled%20%26%20cron%20jobs.",
+     "domain": "inngest.com",
+     "position": 4,
+     "description": "No infrastructure to provision or maintain. * Background jobs. One line in \nyour code makes any background job reliable. Automatic retries, recovery, \nand observa...",
+     "citationPillId": 3
+    },
+    {
+     "label": "Inngest: Durable Execution for Workflows & AI",
+     "url": "https://www.inngest.com/#:~:text=Durable%20message%20queues%20without%20the%20infrastructure%E2%80%94no%20Redis,Events.%20Handle%20webhooks%20and%20event%2Ddriven%20functions%20reliably.",
+     "domain": "inngest.com",
+     "position": 5,
+     "description": "Durable message queues without the infrastructure\u2014no Redis or broker, with \nbuilt-in flow control. Learn More\u2192 * Workflow orchestration. Multi-step \nworkflow orch...",
+     "citationPillId": 3
+    },
+    {
+     "label": "What is durable execution? Reliable long-running workflows",
+     "url": "https://decagon.ai/glossary/what-is-durable-execution#:~:text=Workflow%20code%20has%20to%20make%20the%20same,part%20of%20the%20logic%20that%20gets%20replayed.",
+     "domain": "decagon.ai",
+     "position": 6,
+     "description": "Workflow code has to make the same decisions every time it runs against the \nsame history, so it can't read the clock, pick random numbers or call \noutside servic...",
+     "citationPillId": 4
+    },
+    {
+     "label": "What is durable execution? Reliable long-running workflows",
+     "url": "https://decagon.ai/glossary/what-is-durable-execution#:~:text=When%20a%20server%20dies%20mid%2Dtask%2C%20another%20one,with%20retries%20and%20timeouts%20set%20in%20configuration.",
+     "domain": "decagon.ai",
+     "position": 7,
+     "description": "When a server dies mid-task, another one reads the log and reruns the \nworkflow code from the top. This is called replay. Whenever the code \nreaches a step the lo...",
+     "citationPillId": 4
+    }
+   ],
+   "markdown": "When building AI tasks, pipelines, or multi-step agent loops that require robust retries, state persistence, and error handling, several durable workflow engines stand out depending on your stack and deployment preferences: [Durable Execution for AI Agents: State, Checkpointing, Retries and](https://medium.com/@serifcolakel/durable-execution-for-ai-agents-state-checkpointing-retries-and-human-in-the-loop-bb87a8da3a5b#:~:text=A%20durable%20execution%20engine%20provides%20the%20infrastructure,and%20publishes%20it%20to%20an%20external%20system.)\n\n### 1\\. **Temporal** (The Industry Standard for Code-As-Workflow)\n\n  * **Best for:** Complex, long-running agentic loops, enterprise-grade reliability, and polyglot architectures.\n\n  * **Why it fits AI tasks:** Temporal treats your workflow as code (available in Python, TypeScript, Go, Java, etc.). It automatically checkpoints every step. If an LLM API rate-limits, times out, or your server crashes mid-execution, Temporal isolates the failure to that specific \"activity,\" retries it with exponential backoff, and resumes the workflow right where it left off without re-running previous expensive model calls. [Temporal: Durable Execution Solutions](https://temporal.io/#:~:text=APIs%20fail%2C%20networks%20time%20out%2C%20and%20users,always%20picks%20up%20where%20it%20left%20off.)[Temporal: Durable Execution Solutions](https://temporal.io/#:~:text=*%20Write%20code%20as%20if%20failure%20doesn't,Works.%20Create%20failproof%20apps%20using%20our%20SDKs.)\n\n  * **Trade-off:** Requires running a Temporal Cluster (though Temporal Cloud abstracts this).\n\n### 2\\. **Inngest** (Best for TypeScript & Serverless/Web Applications)\n\n  * **Best for:** Developers building AI features inside web apps, serverless environments, or standard Node.js/TypeScript codebases.\n\n  * **Why it fits AI tasks:** Inngest lets you write background jobs and step-based workflows using native code without provisioning complex state-machine infrastructure. It provides built-in rate-limiting, concurrency controls, automatic step-level retries, and step checkpointing. It integrates smoothly with modern AI frameworks (like the Vercel AI SDK). [Inngest: Durable Execution for Workflows & AI](https://www.inngest.com/#:~:text=No%20infrastructure%20to%20provision%20or%20maintain.%20*,Learn%20More%E2%86%92%20*%20Scheduled%20%26%20cron%20jobs.)[Inngest: Durable Execution for Workflows & AI](https://www.inngest.com/#:~:text=Durable%20message%20queues%20without%20the%20infrastructure%E2%80%94no%20Redis,Events.%20Handle%20webhooks%20and%20event%2Ddriven%20functions%20reliably.)\n\n  * **Trade-off:** Primarily optimized for TypeScript/JavaScript ecosystems.\n\n### 3\\. **Prefect or Dagster** (Best for Data Pipelines & Heavy LLM Processing)\n\n  * **Best for:** RAG (Retrieval-Augmented Generation) pipelines, batch document processing, embedding generation, and data-heavy AI workflows.\n\n  * **Why it fits AI tasks:** While historically built for data engineering, their modern task-orchestration models handle retries, timeouts, and state tracking natively. If your AI task involves heavy data preparation, chunking, and calling LLMs across thousands of files, these tools offer unmatched visibility and data lineage.\n\n  * **Trade-off:** Less suited for real-time, event-driven agent loops compared to Temporal or Inngest.\n\n### Key Architectural Rule for AI Workflows\n\nWhichever engine you choose, remember the golden rule of durable AI workflows: **Isolate non-deterministic code (like LLM generations or random tool outputs) into isolated \"activities\" or \"steps.\"** Because workflow engines use replay mechanics to recover from crashes, your core workflow logic must remain deterministic, letting the engine record and replay the saved outputs of your AI calls. [What is durable execution? Reliable long-running workflows](https://decagon.ai/glossary/what-is-durable-execution#:~:text=Workflow%20code%20has%20to%20make%20the%20same,part%20of%20the%20logic%20that%20gets%20replayed.)[What is durable execution? Reliable long-running workflows](https://decagon.ai/glossary/what-is-durable-execution#:~:text=When%20a%20server%20dies%20mid%2Dtask%2C%20another%20one,with%20retries%20and%20timeouts%20set%20in%20configuration.)"
+  }
+ }
+}

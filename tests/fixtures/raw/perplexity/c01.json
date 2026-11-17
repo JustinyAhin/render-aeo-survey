@@ -1,0 +1,204 @@
+{
+ "engine": "perplexity",
+ "tool": "dataforseo.x.ai-optimization-perplexity-llm-responses-live",
+ "prompt_id": "c01",
+ "cluster": "c_alt",
+ "prompt": "What are the best Heroku alternatives in 2026?",
+ "fetched_at": "2026-11-17T04:53:18Z",
+ "treg": {
+  "http_status": 200,
+  "call_id": "235de7d330e2481c84174a0d0fc4c659",
+  "charged_micro": 6385
+ },
+ "result": {
+  "version": "0.1.20261103",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "time": "5.0413 sec.",
+  "cost": 0.006385,
+  "tasks_count": 1,
+  "tasks_error": 0,
+  "tasks": [
+   {
+    "id": "11170453-2171-0612-0000-63bf82f666e8",
+    "status_code": 20000,
+    "status_message": "Ok.",
+    "time": "5.0336 sec.",
+    "cost": 0.006385,
+    "result_count": 1,
+    "path": [
+     "v3",
+     "ai_optimization",
+     "perplexity",
+     "llm_responses",
+     "live"
+    ],
+    "data": {
+     "api": "ai_optimization",
+     "function": "llm_responses",
+     "se": "perplexity",
+     "model_name": "sonar",
+     "user_prompt": "What are the best Heroku alternatives in 2026?",
+     "web_search_country_iso_code": "US"
+    },
+    "result": [
+     {
+      "model_name": "sonar",
+      "input_tokens": 19,
+      "output_tokens": 766,
+      "reasoning_tokens": 0,
+      "web_search": true,
+      "money_spent": 0.005785,
+      "datetime": "2026-11-17 04:53:17 +00:00",
+      "items": [
+       {
+        "type": "message",
+        "sections": [
+         {
+          "type": "text",
+          "text": "The **best Heroku alternatives in 2026** depend on what you value most:\n\n| Platform | Best for | Main trade-off |\n|---|---|---|\n| **Render** | Closest managed, like-for-like Heroku replacement | Less infrastructure control |\n| **Railway** | Fast deployments and usage-based pricing | Costs can be less predictable as usage grows |\n| **Fly.io** | Global, low-latency applications | Requires more infrastructure knowledge |\n| **DigitalOcean App Platform** | Simple, budget-friendly managed hosting | Fewer advanced deployment features |\n| **Coolify** | Open-source self-hosting on a VPS | You manage backups, updates, and reliability |\n| **Northflank** | Container-heavy production workloads and BYOC | More complex than Heroku |\n| **Vercel** | Next.js and frontend applications | Not ideal for long-running workers or traditional backends |\n| **Upsun** | Enterprise workflows and environment cloning | Pricing and setup are less straightforward |\n\n### Best overall: Render\n\nRender is generally the closest Heroku replacement: it supports web services, background workers, cron jobs, managed PostgreSQL, Docker, and pull-request preview environments. Web services start around $7 per month, while managed Postgres starts around $6 per month.[1][6]\n\n### Best for developer experience: Railway\n\nRailway is well suited to prototypes, small production applications, and teams that want to deploy from a repository quickly. It provides a visual project interface, databases, preview environments, and usage-based billing; its Hobby plan starts at $5 per month plus resource usage.[1][6]\n\n### Best for global applications: Fly.io\n\nFly.io is a strong choice for latency-sensitive or multi-region applications because it runs workloads close to users in many regions and supports container-like deployments with usage-based pricing. The trade-off is that it exposes more infrastructure concepts than Heroku or Render.[1][5]\n\n### Best budget managed option: DigitalOcean App Platform\n\nDigitalOcean App Platform offers a relatively simple managed PaaS with Git-based deployments and access to DigitalOcean\u2019s broader ecosystem. Basic services start around $5 per month, although databases and additional resources cost extra.[1][8]\n\n### Best self-hosted option: Coolify\n\nCoolify provides an open-source, Heroku-like deployment experience on your own VPS or server. It can deploy applications and databases over SSH and avoids platform service fees, but you remain responsible for server security, backups, upgrades, TLS, and uptime.[2][6]\n\n### Best for frontend applications: Vercel\n\nVercel is the strongest choice for Next.js, React, and other frontend-focused applications using serverless or edge functions. It is less suitable than Heroku-style platforms for persistent processes, background workers, and traditional always-on servers.[1][8]\n\n### Best for enterprise or BYOC: Northflank or Qovery\n\nNorthflank and Qovery are better fits when applications must run in a company\u2019s own AWS, Google Cloud, Azure, or Kubernetes environment. They provide a managed developer experience while offering more control over infrastructure, compliance, and cloud ownership\u2014but with greater cost and operational complexity.[1][5]\n\n**Quick recommendation:**\n\n- Choose **Render** for the easiest Heroku migration.\n- Choose **Railway** for rapid prototyping and small applications.\n- Choose **Fly.io** for multi-region or latency-sensitive workloads.\n- Choose **DigitalOcean App Platform** for simple, economical managed hosting.\n- Choose **Coolify** if minimizing platform costs and owning the infrastructure matter most.\n- Choose **Vercel** for frontend and Next.js projects.\n- Choose **Northflank or Qovery** for serious container workloads and bring-your-own-cloud deployments.",
+          "annotations": [
+           {
+            "title": "Top Heroku Alternatives",
+            "url": "https://www.fly.io/learn/heroku-alternatives/",
+            "start_index": null,
+            "end_index": null,
+            "text": null
+           },
+           {
+            "title": "Best open-source Heroku alternatives (Nov 2026): 3 ranked",
+            "url": "https://archestack.com/alternatives/heroku/",
+            "start_index": null,
+            "end_index": null,
+            "text": null
+           },
+           {
+            "title": "Heroku Alternatives in 2026 - DEV Community",
+            "url": "https://dev.to/lightcloud/heroku-alternatives-in-2026-2f55",
+            "start_index": null,
+            "end_index": null,
+            "text": null
+           },
+           {
+            "title": "9 Best Heroku Alternatives in 2026, Ranked - Temps",
+            "url": "https://temps.sh/blog/9-best-heroku-alternatives-2026",
+            "start_index": null,
+            "end_index": null,
+            "text": null
+           },
+           {
+            "title": "Heroku Alternatives With Predictable Pricing: 8 PaaS ...",
+            "url": "https://www.qovery.com/blog/heroku-alternatives-predictable-pricing-paas-comparison",
+            "start_index": null,
+            "end_index": null,
+            "text": null
+           },
+           {
+            "title": "5 PaaS Platforms Like Heroku, Compared (And When Each One ...",
+            "url": "https://www.qovery.com/blog/paas-platforms-like-heroku-compared",
+            "start_index": null,
+            "end_index": null,
+            "text": null
+           },
+           {
+            "title": "Best Heroku Alternatives in 2026 \u2014 Compared & Ranked",
+            "url": "https://www.back4app.com/heroku-alternatives",
+            "start_index": null,
+            "end_index": null,
+            "text": null
+           },
+           {
+            "title": "Top 11 Heroku Alternatives for Cloud Deployment in 2026",
+            "url": "https://www.digitalocean.com/resources/articles/heroku-alternatives",
+            "start_index": null,
+            "end_index": null,
+            "text": null
+           },
+           {
+            "title": "The 10 Best Heroku Alternatives in 2026 (Free, Paid, and Predictable)",
+            "url": "https://dev.to/selfhost/the-10-best-heroku-alternatives-in-2026-free-paid-and-predictable-1k7d",
+            "start_index": null,
+            "end_index": null,
+            "text": null
+           },
+           {
+            "title": "GitHub - raksiv/heroku-alternatives: An opinionated list of ...",
+            "url": "https://github.com/raksiv/heroku-alternatives",
+            "start_index": null,
+            "end_index": null,
+            "text": null
+           }
+          ]
+         }
+        ]
+       }
+      ],
+      "fan_out_queries": null,
+      "search_results": [
+       {
+        "title": "Top Heroku Alternatives",
+        "url": "https://www.fly.io/learn/heroku-alternatives/",
+        "date": "2026-11-14 00:00:00 +00:00",
+        "snippet": "# Top Heroku Alternatives\nThe top Heroku alternatives in 2026 are Render, Railway, DigitalOcean App Platform, Vercel, Netlify, Platform.sh (now Upsun), Northflank and Fly.io, and the right one depends on whether you are moving a full-stack app with workers and a database or a frontend with serverles..."
+       },
+       {
+        "title": "Best open-source Heroku alternatives (Nov 2026): 3 ranked",
+        "url": "https://archestack.com/alternatives/heroku/",
+        "date": "2026-11-16 00:00:00 +00:00",
+        "snippet": "Best open-source Heroku alternatives (Nov 2026): 3 ranked\n...\n# Open-source alternatives to Heroku\n**coolify leads with 93, ahead of dokploy (87) and dokku (84).** Updated 16 Nov 2026 from public GitHub data.\n...\n**Open-source alternatives to Heroku**\n...\n|Rank|Project|Score|\n|--|--|--|\n|1|coolifySe..."
+       },
+       {
+        "title": "Heroku Alternatives in 2026 - DEV Community",
+        "url": "https://dev.to/lightcloud/heroku-alternatives-in-2026-2f55",
+        "date": "2026-11-15 00:00:00 +00:00",
+        "snippet": "# Heroku Alternatives in 2026\n...\n## The ranking\n|#|Platform|App + review apps a month|Always on, a month|Review apps|Scheduler and workers|\n|--|--|--|--|--|--|\n|1|Light Cloud|$5|about $56 (Starter, always-on Micro)|Every branch, shares the production database|Neither yet|\n|2|Railway|$5 plus usage o..."
+       },
+       {
+        "title": "9 Best Heroku Alternatives in 2026, Ranked - Temps",
+        "url": "https://temps.sh/blog/9-best-heroku-alternatives-2026",
+        "date": "2026-11-06 00:00:00 +00:00",
+        "snippet": "9 Best Heroku Alternatives in 2026, Ranked | Temps\n...\n# 9 Best Heroku Alternatives in 2026, Ranked\n...\nThe nine best Heroku alternatives in 2026 are Temps, Railway, Render, Fly.io, Coolify, Dokku, Dokploy, DigitalOcean App Platform and Google Cloud Run.\nTemps is the pick if you want to self-host wi..."
+       },
+       {
+        "title": "Heroku Alternatives With Predictable Pricing: 8 PaaS ...",
+        "url": "https://www.qovery.com/blog/heroku-alternatives-predictable-pricing-paas-comparison",
+        "date": "2026-11-15 00:00:00 +00:00",
+        "snippet": "# Heroku Alternatives With Predictable Pricing: 8 PaaS Options We'd Evaluate in 2026\n...\n### Key Points\n- The shortlist I would actually evaluate in 2026: Render and DigitalOcean App Platform for fixed-price simplicity, Railway and Fly.io for usage-based and edge workloads, Upsun for Platform.sh-sty..."
+       },
+       {
+        "title": "5 PaaS Platforms Like Heroku, Compared (And When Each One ...",
+        "url": "https://www.qovery.com/blog/paas-platforms-like-heroku-compared",
+        "date": "2026-11-15 00:00:00 +00:00",
+        "snippet": "- The five strongest PaaS platforms like Heroku are **Qovery, Render, Railway, Fly.io, and Coolify**.\n...\nThe five best PaaS platforms like Heroku right now are Qovery (BYOC on your own cloud or Kubernetes), Render (hosted Heroku-style PaaS), Railway (fastest developer experience for small teams), F..."
+       },
+       {
+        "title": "Best Heroku Alternatives in 2026 \u2014 Compared & Ranked",
+        "url": "https://www.back4app.com/heroku-alternatives",
+        "date": "2026-10-30 00:00:00 +00:00",
+        "snippet": "Best Heroku Alternatives in 2026 \u2014 Compared & Ranked | Back4App\n...\n# The 10 Best Heroku Alternatives in 2026\nThis guide compares the best Heroku alternatives in 2026.\n...\n## What are the best Heroku alternatives in 2026?\nThe best Heroku alternatives in 2026 include Back4App (CaaS + BaaS with AI age..."
+       },
+       {
+        "title": "Top 11 Heroku Alternatives for Cloud Deployment in 2026",
+        "url": "https://www.digitalocean.com/resources/articles/heroku-alternatives",
+        "date": "2026-10-02 00:00:00 +00:00",
+        "snippet": "Top 11 Heroku Alternatives for Cloud Deployment in 2026 | DigitalOcean\n...\n- The top Heroku alternatives include DigitalOcean App Platform, Render, Fly.io, Upsun, Vercel, Netlify, AWS Elastic Beanstalk, Google Cloud App Engine, Microsoft Azure App Service, Coolify, and Dokku.\n...\n*Note: Pricing and ..."
+       },
+       {
+        "title": "The 10 Best Heroku Alternatives in 2026 (Free, Paid, and Predictable)",
+        "url": "https://dev.to/selfhost/the-10-best-heroku-alternatives-in-2026-free-paid-and-predictable-1k7d",
+        "date": "2026-11-15 00:00:00 +00:00",
+        "snippet": "The 10 Best Heroku Alternatives in 2026 (Free, Paid, and Predictable) - DEV Community\n...\n- **There is no single best Heroku alternative, only the best one for why you are leaving.** Whether you are chasing lower cost, more control, global low latency, or a frontend-first stack, each reason points t..."
+       },
+       {
+        "title": "GitHub - raksiv/heroku-alternatives: An opinionated list of ...",
+        "url": "https://github.com/raksiv/heroku-alternatives",
+        "date": "2026-10-31 00:00:00 +00:00",
+        "snippet": "# Top Heroku Alternatives 2026\n...\nLong-form reasoning behind each pick lives in the full write-up: 9 Heroku Alternatives Worth Trying in 2026.\n...\n|Platform|Runtime|Free tier|Long-running|Managed Postgres|Edge included|Multi-region|BYO / self-host|\n|--|--|--|--|--|--|--|--|\n|Suga|Containers|\u2705|\u2705|Con..."
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

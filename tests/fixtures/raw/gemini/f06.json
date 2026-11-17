@@ -1,0 +1,64 @@
+{
+ "engine": "gemini",
+ "tool": "cloro.ai-search.gemini.scrape",
+ "prompt_id": "f06",
+ "cluster": "f_render",
+ "prompt": "How long does a free Postgres database last on Render?",
+ "fetched_at": "2026-11-17T04:52:08Z",
+ "treg": {
+  "http_status": 200,
+  "call_id": "9e970bcb4c604b3ca56f7f6ae6a556bb",
+  "charged_micro": 2400
+ },
+ "result": {
+  "success": true,
+  "result": {
+   "text": "A free PostgreSQL database on Render lasts for 30 days from the date it is created.\n\nKey details regarding the lifespan and limits of a free Render database include:\n\nThe Expiration Clock: Once 30 days are up, the database expires and becomes inaccessible.\n\nThe Grace Period: \ue001After expiration, you have a 14-day grace period to upgrade your database to a paid plan (starting at $6/month) to save your data.\ue801\n\nDeletion: If you do not upgrade before the grace period ends, Render permanently deletes the database and all of its contents.\n\nOther Limitations: \ue002Free databases are restricted to 1 GB of storage, allow up to 100 connections, and do not support automated backups.\ue802\n\nIf you are just using it for a quick test, prototype, or tutorial, you can spin up a new one after expiration, but anything intended for long-term use will need to be migrated or upgraded before the 30-day mark.",
+   "sources": [
+    {
+     "position": 1,
+     "label": "Deploy for Free \u2013 Render Docs",
+     "url": "https://render.com/docs/free#:~:text=For%20long%2Dterm%20data%20storage%3A%20*%20Paid%20services,Postgres%20databases%20expire%2030%20days%20after%20creation.",
+     "description": " For long-term data storage: * Paid services can preserve local filesystem \nchanges by attaching a persistent disk, but Free web services cannot. * \nPaid and Free..."
+    },
+    {
+     "position": 2,
+     "label": "Is Render Free? Free Tier Limits, Sleep, and the 30-Day DB (2026)",
+     "url": "https://justinmckelvey.com/blog/is-render-free#:~:text=Is%20Render's%20free%20Postgres%20really%20deleted%20after,the%20database%20and%20all%20of%20its%20data.",
+     "description": "Is Render's free Postgres really deleted after 30 days? Yes. A free Render \nPostgres database expires 30 days after creation. Once expired it is \ninaccessible unl..."
+    },
+    {
+     "position": 3,
+     "label": "From side project to production: scaling your first app - Render",
+     "url": "https://render.com/articles/from-side-project-to-production-scaling-your-first-app#:~:text=Cold%20start%20occurs%20when%20spinning%20up%20from,nothing%20you%20store%20on%20them%20is%20permanent.",
+     "description": "Cold start occurs when spinning up from idle state, taking about one minute \nbefore the service serves traffic again. Free instance hours: 750 hours per \nworkspac..."
+    },
+    {
+     "position": 4,
+     "label": "Render Free Tier: What You Get, What Spins Down, and What Expires",
+     "url": "https://www.runxbuild.com/blog/render-free/#:~:text=A%20free%20web%20service%20spins%20down%20when,30%20days%2C%20after%20which%20it%20is%20removed.",
+     "description": "A free web service spins down when it receives no traffic and wakes on the \nnext request, producing a cold start of some seconds. Render can also \nrestart a free ..."
+    }
+   ],
+   "citationPills": [
+    {
+     "label": "Deploy for Free \u2013 Render Docs",
+     "url": "https://render.com/docs/free#:~:text=For%20long%2Dterm%20data%20storage%3A%20*%20Paid%20services,Postgres%20databases%20expire%2030%20days%20after%20creation.",
+     "domain": "render.com",
+     "position": 1,
+     "description": " For long-term data storage: * Paid services can preserve local filesystem \nchanges by attaching a persistent disk, but Free web services cannot. * \nPaid and Free...",
+     "citationPillId": 1
+    },
+    {
+     "label": "Render Free Tier: What You Get, What Spins Down, and What Expires",
+     "url": "https://www.runxbuild.com/blog/render-free/#:~:text=A%20free%20web%20service%20spins%20down%20when,30%20days%2C%20after%20which%20it%20is%20removed.",
+     "domain": "runxbuild.com",
+     "position": 4,
+     "description": "A free web service spins down when it receives no traffic and wakes on the \nnext request, producing a cold start of some seconds. Render can also \nrestart a free ...",
+     "citationPillId": 2
+    }
+   ],
+   "markdown": "A free PostgreSQL database on Render lasts for **30 days** from the date it is created. [Deploy for Free \u2013 Render Docs](https://render.com/docs/free#:~:text=For%20long%2Dterm%20data%20storage%3A%20*%20Paid%20services,Postgres%20databases%20expire%2030%20days%20after%20creation.)\n\nKey details regarding the lifespan and limits of a free Render database include:\n\n  * **The Expiration Clock:** Once 30 days are up, the database expires and becomes inaccessible.\n\n  * **The Grace Period:** \ue001After expiration, you have a **14-day grace period** to upgrade your database to a paid plan (starting at $6/month) to save your data.\ue801\n\n  * **Deletion:** If you do not upgrade before the grace period ends, Render permanently deletes the database and all of its contents.\n\n  * **Other Limitations:** \ue002Free databases are restricted to **1 GB of storage**, allow up to 100 connections, and do not support automated backups.\ue802\n\nIf you are just using it for a quick test, prototype, or tutorial, you can spin up a new one after expiration, but anything intended for long-term use will need to be migrated or upgraded before the 30-day mark. [Render Free Tier: What You Get, What Spins Down, and What Expires](https://www.runxbuild.com/blog/render-free/#:~:text=A%20free%20web%20service%20spins%20down%20when,30%20days%2C%20after%20which%20it%20is%20removed.)"
+  }
+ }
+}

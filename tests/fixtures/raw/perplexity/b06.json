@@ -1,0 +1,204 @@
+{
+ "engine": "perplexity",
+ "tool": "dataforseo.x.ai-optimization-perplexity-llm-responses-live",
+ "prompt_id": "b06",
+ "cluster": "b_ai",
+ "prompt": "What is a good durable workflow engine for AI tasks with retries?",
+ "fetched_at": "2026-11-17T04:53:15Z",
+ "treg": {
+  "http_status": 200,
+  "call_id": "f098b3d20af944a9a157035965398526",
+  "charged_micro": 6016
+ },
+ "result": {
+  "version": "0.1.20261103",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "time": "3.7095 sec.",
+  "cost": 0.006016,
+  "tasks_count": 1,
+  "tasks_error": 0,
+  "tasks": [
+   {
+    "id": "11170453-2171-0612-0000-67986445bd19",
+    "status_code": 20000,
+    "status_message": "Ok.",
+    "time": "3.7029 sec.",
+    "cost": 0.006016,
+    "result_count": 1,
+    "path": [
+     "v3",
+     "ai_optimization",
+     "perplexity",
+     "llm_responses",
+     "live"
+    ],
+    "data": {
+     "api": "ai_optimization",
+     "function": "llm_responses",
+     "se": "perplexity",
+     "model_name": "sonar",
+     "user_prompt": "What is a good durable workflow engine for AI tasks with retries?",
+     "web_search_country_iso_code": "US"
+    },
+    "result": [
+     {
+      "model_name": "sonar",
+      "input_tokens": 20,
+      "output_tokens": 396,
+      "reasoning_tokens": 0,
+      "web_search": true,
+      "money_spent": 0.005416,
+      "datetime": "2026-11-17 04:53:14 +00:00",
+      "items": [
+       {
+        "type": "message",
+        "sections": [
+         {
+          "type": "text",
+          "text": "**Temporal** is the strongest general-purpose choice for durable AI workflows with retries. It records workflow history, resumes after worker or infrastructure failures, and supports retries, timeouts, timers, task queues, signals, and long-running executions.[1][2]\n\nChoose based on your stack:\n\n- **Temporal** \u2014 Best default for production agents, multi-step workflows, human approvals, long waits, and complex recovery logic. Put model calls and tool calls in activities, make them idempotent, and configure activity-level retries.[1][2]\n- **Inngest** \u2014 Good lighter-weight option for TypeScript/serverless applications where workflows are primarily event-triggered steps with retries and checkpointing.[2]\n- **Restate** \u2014 Strong for low-latency services and session- or user-oriented agents that need durable state without adopting a full workflow-cluster model.[1][2]\n- **Prefect** \u2014 Better for Python-centric data, ML, and batch pipelines than for interactive customer-facing agent workflows.[2]\n- **AWS Step Functions** \u2014 Convenient if the system is already deeply integrated with AWS and can accept state-machine definitions and AWS coupling.[2]\n- **Cloudflare Workflows** \u2014 A practical choice when the application already runs on Cloudflare Workers; it provides persisted state, retries, and long-running execution.[3]\n\nA solid Temporal design is:\n\n```text\nWorkflow\n  \u251c\u2500 call model        -> Activity, retryable\n  \u251c\u2500 invoke tool       -> Activity, idempotency key\n  \u251c\u2500 wait for approval  -> Durable timer/signal\n  \u251c\u2500 compensate failure -> Activity or child workflow\n  \u2514\u2500 notify user       -> Activity, deduplicated\n```\n\nDo not rely on retries alone for side effects such as sending email, charging a card, or creating records. Use idempotency keys and an action log because a process can fail after the external side effect succeeds but before the workflow records success.[3]",
+          "annotations": [
+           {
+            "title": "Best durable workflow platforms for AI agents and LLM workloads",
+            "url": "https://render.com/articles/best-durable-workflow-platforms-for-ai-agents-and-llm-workloads",
+            "start_index": null,
+            "end_index": null,
+            "text": null
+           },
+           {
+            "title": "Best backend workflow engines for custom workflow builders",
+            "url": "https://www.workflowbuilder.io/blog/best-backend-workflow-engines",
+            "start_index": null,
+            "end_index": null,
+            "text": null
+           },
+           {
+            "title": "Best Durable Execution Platforms for AI Agents",
+            "url": "https://www.swytchcode.com/content/best-durable-execution-platforms",
+            "start_index": null,
+            "end_index": null,
+            "text": null
+           },
+           {
+            "title": "Durable AI Agents: Workflow Strategies for Resilient Systems",
+            "url": "https://dev.to/imversion_tech/durable-ai-agents-workflow-strategies-for-resilient-systems-23ki",
+            "start_index": null,
+            "end_index": null,
+            "text": null
+           },
+           {
+            "title": "Is Durable Workflow a good workflow engine for AI agents?",
+            "url": "https://durable-workflow.com/docs/ai-agent-workflow-engine/",
+            "start_index": null,
+            "end_index": null,
+            "text": null
+           },
+           {
+            "title": "Cloudflare",
+            "url": "https://www.cloudflare.com/solutions/workflows.md",
+            "start_index": null,
+            "end_index": null,
+            "text": null
+           },
+           {
+            "title": "Harsh-Vaghela-404/duraflow: Durable workflow engine ...",
+            "url": "https://github.com/Harsh-Vaghela-404/duraflow",
+            "start_index": null,
+            "end_index": null,
+            "text": null
+           },
+           {
+            "title": "Cloudflare Workflows - Durable Execution Engine",
+            "url": "https://www.cloudflare.com/products/workflows/",
+            "start_index": null,
+            "end_index": null,
+            "text": null
+           },
+           {
+            "title": "Polling Agents in AI Assistants: 11 Implementation Patterns - Rost Glukhov",
+            "url": "https://www.glukhov.org/ai-systems/architecture/polling-agents-ai-assistants-implementation-patterns/",
+            "start_index": null,
+            "end_index": null,
+            "text": null
+           },
+           {
+            "title": "Is Durable Workflow a good workflow engine for AI agents?",
+            "url": "https://durable-workflow.com/docs/2.0/ai-agent-workflow-engine/",
+            "start_index": null,
+            "end_index": null,
+            "text": null
+           }
+          ]
+         }
+        ]
+       }
+      ],
+      "fan_out_queries": null,
+      "search_results": [
+       {
+        "title": "Best durable workflow platforms for AI agents and LLM workloads",
+        "url": "https://render.com/articles/best-durable-workflow-platforms-for-ai-agents-and-llm-workloads",
+        "date": "2026-11-12 00:00:00 +00:00",
+        "snippet": "# Best durable workflow platforms for AI agents and LLM workloads\n- Choose **Render Workflows** for Python or TypeScript agents with compute-heavy tasks.\n...\n- **Best for compute-heavy AI tasks in Python:** Render Workflows.\nA task can use up to 32 GB of RAM for up to 24 hours, and Python is a first..."
+       },
+       {
+        "title": "Best backend workflow engines for custom workflow builders",
+        "url": "https://www.workflowbuilder.io/blog/best-backend-workflow-engines",
+        "date": "2026-11-09 00:00:00 +00:00",
+        "snippet": "Temporal is the strongest choice when workflows need to survive long waits, worker failures and unreliable dependencies.\nIt is built around durable execution.\nWorkflow state is recorded as an event history.\nWhen a worker crashes or infrastructure restarts, Temporal can replay that history and contin..."
+       },
+       {
+        "title": "Best Durable Execution Platforms for AI Agents",
+        "url": "https://www.swytchcode.com/content/best-durable-execution-platforms",
+        "date": "2026-11-05 00:00:00 +00:00",
+        "snippet": "**Temporal.** The reference for this category.\nWorkflow code must be deterministic.\nTemporal replays it to rebuild state.\nSide effects belong in activities, which are not replayed as workflow code.\nThey are retried as activities.\nYou are expected to make activities safe to run more than once.\n...\nUs..."
+       },
+       {
+        "title": "Durable AI Agents: Workflow Strategies for Resilient Systems",
+        "url": "https://dev.to/imversion_tech/durable-ai-agents-workflow-strategies-for-resilient-systems-23ki",
+        "date": "2026-11-15 00:00:00 +00:00",
+        "snippet": "Break AI agent workflows into step boundaries, save state after each meaningful transition, and store an event log plus retry counters in PostgreSQL, DynamoDB, or Temporal-style durable execution systems.\n...\nTurn the agent into a workflow with persisted state in PostgreSQL, DynamoDB, or a system li..."
+       },
+       {
+        "title": "Is Durable Workflow a good workflow engine for AI agents?",
+        "url": "https://durable-workflow.com/docs/ai-agent-workflow-engine/",
+        "date": "2026-11-16 00:00:00 +00:00",
+        "snippet": "Is Durable Workflow a good workflow engine for AI agents?\n...\n# Is Durable Workflow a good workflow engine for AI agents?\n**Yes.** Durable Workflow 2.0 is a credible choice when an agent must operate replay-based durable workflows through machine-readable contracts, especially when self-hosting, a b..."
+       },
+       {
+        "title": "Cloudflare",
+        "url": "https://www.cloudflare.com/solutions/workflows.md",
+        "date": "2026-09-20 00:00:00 +00:00",
+        "snippet": "Workflows is an execution engine built on Cloudflare Workers \u2014 to build applications that can automatically retry, persist state and run for minutes, hours, days, or weeks.\nWorkflows introduces a programming model that makes it easier to build reliable, long-running tasks, observe progression, and p..."
+       },
+       {
+        "title": "Harsh-Vaghela-404/duraflow: Durable workflow engine ...",
+        "url": "https://github.com/Harsh-Vaghela-404/duraflow",
+        "date": "2026-10-28 00:00:00 +00:00",
+        "snippet": "**Durable workflow engine that makes AI agents crash-proof.** Wrap your agent in `step.run()`, get checkpointing, retries, and saga rollbacks for free.\n...\nDuraflow is a durable workflow engine designed for the shape of AI work.\nYou wrap your agent code in `step.run(...)`.\nDuraflow handles everythin..."
+       },
+       {
+        "title": "Cloudflare Workflows - Durable Execution Engine",
+        "url": "https://www.cloudflare.com/products/workflows/",
+        "date": "2026-10-02 00:00:00 +00:00",
+        "snippet": "### Workflows is an execution engine built on Cloudflare Workers \u2014 to build applications that can automatically retry, persist state and run for minutes, hours, days, or weeks. No need to worry about scaling, managing infrastructure, or handling durability: Workflows takes care of it for you.\n...\nAn..."
+       },
+       {
+        "title": "Polling Agents in AI Assistants: 11 Implementation Patterns - Rost Glukhov",
+        "url": "https://www.glukhov.org/ai-systems/architecture/polling-agents-ai-assistants-implementation-patterns/",
+        "date": "2026-11-12 00:00:00 +00:00",
+        "snippet": "## Method 7: Durable Workflow Engine\nA durable workflow engine manages long-running execution, timers, retries, and recovery.\nTemporal is the most common choice for Go and Python-based assistant backends; for a full implementation guide see Implementing Workflow Applications with Temporal in Go.\nIns..."
+       },
+       {
+        "title": "Is Durable Workflow a good workflow engine for AI agents?",
+        "url": "https://durable-workflow.com/docs/2.0/ai-agent-workflow-engine/",
+        "date": "2026-08-22 00:00:00 +00:00",
+        "snippet": "**Yes, with a prerelease qualification.** Durable Workflow 2.0 is a credible choice when an agent must operate replay-based durable workflows through machine-readable contracts, especially when self-hosting, a broadly approachable public protocol, deployment flexibility, or a legible core matters.\n...."
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

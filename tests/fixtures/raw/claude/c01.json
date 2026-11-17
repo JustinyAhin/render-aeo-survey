@@ -1,0 +1,398 @@
+{
+ "engine": "claude",
+ "tool": "dataforseo.x.ai-optimization-claude-llm-responses-live",
+ "prompt_id": "c01",
+ "cluster": "c_alt",
+ "prompt": "What are the best Heroku alternatives in 2026?",
+ "fetched_at": "2026-11-17T04:48:22Z",
+ "treg": {
+  "http_status": 200,
+  "call_id": "5d3734cdf0034ecb83bfccb495022426",
+  "charged_micro": 56314
+ },
+ "result": {
+  "version": "0.1.20261103",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "time": "15.3996 sec.",
+  "cost": 0.056314,
+  "tasks_count": 1,
+  "tasks_error": 0,
+  "tasks": [
+   {
+    "id": "11170448-2171-0612-0000-ed75ea737a32",
+    "status_code": 20000,
+    "status_message": "Ok.",
+    "time": "15.3889 sec.",
+    "cost": 0.056314,
+    "result_count": 1,
+    "path": [
+     "v3",
+     "ai_optimization",
+     "claude",
+     "llm_responses",
+     "live"
+    ],
+    "data": {
+     "api": "ai_optimization",
+     "function": "llm_responses",
+     "se": "claude",
+     "model_name": "claude-sonnet-4-5",
+     "user_prompt": "What are the best Heroku alternatives in 2026?",
+     "web_search": true,
+     "max_output_tokens": 1200
+    },
+    "result": [
+     {
+      "model_name": "claude-sonnet-4-5-20250929",
+      "input_tokens": 11738,
+      "output_tokens": 700,
+      "reasoning_tokens": 0,
+      "web_search": true,
+      "money_spent": 0.055714,
+      "datetime": "2026-11-17 04:48:21 +00:00",
+      "items": [
+       {
+        "type": "message",
+        "sections": [
+         {
+          "type": "text",
+          "text": "Based on recent comparisons, here are the best Heroku alternatives in 2026:\n\n## Top Managed Platforms (PaaS)\n\n**Render** - ",
+          "annotations": null
+         },
+         {
+          "type": "text",
+          "text": "The most direct drop-in replacement for Heroku, offering a Heroku-like developer experience with a free tier",
+          "annotations": [
+           {
+            "title": "The 10 Best Heroku Alternatives in 2026 (Free, Paid, and Predictable)",
+            "url": "https://selfhost.dev/blog/the-10-best-heroku-alternatives-in-2026/",
+            "start_index": null,
+            "end_index": null,
+            "text": null
+           },
+           {
+            "title": "13 Best Heroku Alternatives for 2026 - Ecommerce Launcher",
+            "url": "https://ecommercelauncher.com/build/best-heroku-alternatives",
+            "start_index": null,
+            "end_index": null,
+            "text": null
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": ". ",
+          "annotations": null
+         },
+         {
+          "type": "text",
+          "text": "It's the most Heroku-like in pricing shape",
+          "annotations": [
+           {
+            "title": "Heroku alternatives in 2026: five options compared, with real dyno math - DEV Community",
+            "url": "https://dev.to/abhijais1/heroku-alternatives-in-2026-five-options-compared-with-real-dyno-math-3",
+            "start_index": null,
+            "end_index": null,
+            "text": null
+           },
+           {
+            "title": "Heroku alternatives in 2026: five options compared, with real dyno math - DEV Community",
+            "url": "https://dev.to/abhijais1/heroku-alternatives-in-2026-five-options-compared-with-real-dyno-math-3",
+            "start_index": null,
+            "end_index": null,
+            "text": null
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": ".\n\n**Railway** - ",
+          "annotations": null
+         },
+         {
+          "type": "text",
+          "text": "Has the fastest setup",
+          "annotations": [
+           {
+            "title": "Heroku alternatives in 2026: five options compared, with real dyno math - DEV Community",
+            "url": "https://dev.to/abhijais1/heroku-alternatives-in-2026-five-options-compared-with-real-dyno-math-3",
+            "start_index": null,
+            "end_index": null,
+            "text": null
+           },
+           {
+            "title": "Heroku alternatives in 2026: five options compared, with real dyno math - DEV Community",
+            "url": "https://dev.to/abhijais1/heroku-alternatives-in-2026-five-options-compared-with-real-dyno-math-3",
+            "start_index": null,
+            "end_index": null,
+            "text": null
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " and ",
+          "annotations": null
+         },
+         {
+          "type": "text",
+          "text": "is best for speed, simplicity, and early-stage projects",
+          "annotations": [
+           {
+            "title": "13 Best Heroku Alternatives for 2026 - Ecommerce Launcher",
+            "url": "https://ecommercelauncher.com/build/best-heroku-alternatives",
+            "start_index": null,
+            "end_index": null,
+            "text": null
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": ". Pricing starts at $5/month.\n\n**Fly.io** - ",
+          "annotations": null
+         },
+         {
+          "type": "text",
+          "text": "Suits apps spread across continents",
+          "annotations": [
+           {
+            "title": "Heroku alternatives in 2026: five options compared, with real dyno math - DEV Community",
+            "url": "https://dev.to/abhijais1/heroku-alternatives-in-2026-five-options-compared-with-real-dyno-math-3",
+            "start_index": null,
+            "end_index": null,
+            "text": null
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " and ",
+          "annotations": null
+         },
+         {
+          "type": "text",
+          "text": "is best for multi-region and low-latency global apps",
+          "annotations": [
+           {
+            "title": "13 Best Heroku Alternatives for 2026 - Ecommerce Launcher",
+            "url": "https://ecommercelauncher.com/build/best-heroku-alternatives",
+            "start_index": null,
+            "end_index": null,
+            "text": null
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": ". Uses edge deployment with usage-based pricing.\n\n**DigitalOcean App Platform** - ",
+          "annotations": null
+         },
+         {
+          "type": "text",
+          "text": "The right starting point for most Heroku users",
+          "annotations": [
+           {
+            "title": "13 Best Heroku Alternatives for 2026 - Ecommerce Launcher",
+            "url": "https://ecommercelauncher.com/build/best-heroku-alternatives",
+            "start_index": null,
+            "end_index": null,
+            "text": null
+           },
+           {
+            "title": "13 Best Heroku Alternatives for 2026 - Ecommerce Launcher",
+            "url": "https://ecommercelauncher.com/build/best-heroku-alternatives",
+            "start_index": null,
+            "end_index": null,
+            "text": null
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": ". Offers managed databases and CI/CD starting at $5/month.\n\n## Specialized Options\n\n**Vercel** - ",
+          "annotations": null
+         },
+         {
+          "type": "text",
+          "text": "Best for Next.js and frontend-centric apps",
+          "annotations": [
+           {
+            "title": "13 Best Heroku Alternatives for 2026 - Ecommerce Launcher",
+            "url": "https://ecommercelauncher.com/build/best-heroku-alternatives",
+            "start_index": null,
+            "end_index": null,
+            "text": null
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " with edge network optimization.\n\n**Back4App** - ",
+          "annotations": null
+         },
+         {
+          "type": "text",
+          "text": "CaaS + BaaS with AI agent and predictable pricing",
+          "annotations": [
+           {
+            "title": "Best Heroku Alternatives in 2026 \u2014 Compared & Ranked",
+            "url": "https://www.back4app.com/heroku-alternatives",
+            "start_index": null,
+            "end_index": null,
+            "text": null
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": ", starting at $5/month.\n\n**Qovery** - ",
+          "annotations": null
+         },
+         {
+          "type": "text",
+          "text": "Offers Kubernetes power with Heroku simplicity and zero vendor lock-in",
+          "annotations": [
+           {
+            "title": "Top 10 Heroku Alternatives in 2026: When Simplicity Hits the Scaling Wall - Qovery Blog",
+            "url": "https://www.qovery.com/blog/best-heroku-alternatives",
+            "start_index": null,
+            "end_index": null,
+            "text": null
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " using a BYOC (Bring Your Own Cloud) model.\n\n## Self-Hosted/Open Source\n\n**Coolify** - ",
+          "annotations": null
+         },
+         {
+          "type": "text",
+          "text": "The top open-source, self-hosted Heroku alternative",
+          "annotations": [
+           {
+            "title": "Top 14 Heroku Alternatives (2026)",
+            "url": "https://www.bunnyshell.com/comparisons/heroku-alternatives/",
+            "start_index": null,
+            "end_index": null,
+            "text": null
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": " with ",
+          "annotations": null
+         },
+         {
+          "type": "text",
+          "text": "the best self-hosted option for Docker Compose workflows",
+          "annotations": [
+           {
+            "title": "13 Best Heroku Alternatives for 2026 - Ecommerce Launcher",
+            "url": "https://ecommercelauncher.com/build/best-heroku-alternatives",
+            "start_index": null,
+            "end_index": null,
+            "text": null
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": ".\n\n**Dokku** - ",
+          "annotations": null
+         },
+         {
+          "type": "text",
+          "text": "Best open-source self-hosted option",
+          "annotations": [
+           {
+            "title": "13 Best Heroku Alternatives for 2026 - Ecommerce Launcher",
+            "url": "https://ecommercelauncher.com/build/best-heroku-alternatives",
+            "start_index": null,
+            "end_index": null,
+            "text": null
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "text": ", offering the closest OSS Heroku experience on a single VPS.\n\nThe right choice depends on your priorities: Render for ease of migration, Fly.io for global performance, Railway for quick setup, or self-hosted options like Coolify for maximum control and cost savings.",
+          "annotations": null
+         }
+        ]
+       }
+      ],
+      "fan_out_queries": [
+       "best Heroku alternatives 2026"
+      ],
+      "search_results": [
+       {
+        "title": "Best Heroku Alternatives in 2026 \u2014 Compared & Ranked",
+        "url": "https://www.back4app.com/heroku-alternatives",
+        "date": "2026-02-17 04:48:21 +00:00",
+        "snippet": null
+       },
+       {
+        "title": "Heroku alternatives in 2026: five options compared, with real dyno math - DEV Community",
+        "url": "https://dev.to/abhijais1/heroku-alternatives-in-2026-five-options-compared-with-real-dyno-math-3",
+        "date": "2026-10-25 04:48:21 +00:00",
+        "snippet": null
+       },
+       {
+        "title": "Top 11 Heroku Alternatives for Cloud Deployment in 2026",
+        "url": "https://www.digitalocean.com/resources/articles/heroku-alternatives",
+        "date": "2026-02-10 04:48:21 +00:00",
+        "snippet": null
+       },
+       {
+        "title": "Top Heroku alternatives in 2026",
+        "url": "https://northflank.com/blog/top-heroku-alternatives",
+        "date": "2026-01-03 04:48:21 +00:00",
+        "snippet": null
+       },
+       {
+        "title": "Top 10 Heroku Alternatives in 2026: When Simplicity Hits the Scaling Wall - Qovery Blog",
+        "url": "https://www.qovery.com/blog/best-heroku-alternatives",
+        "date": "2026-03-16 04:48:21 +00:00",
+        "snippet": null
+       },
+       {
+        "title": "Heroku Alternatives for Node and Rails Apps: 10 Options Compared (2026) - Qovery Blog",
+        "url": "https://www.qovery.com/blog/heroku-alternatives-node-rails-apps-compared",
+        "date": "2026-09-09 04:48:21 +00:00",
+        "snippet": null
+       },
+       {
+        "title": "The 10 Best Heroku Alternatives in 2026 (Free, Paid, and Predictable)",
+        "url": "https://selfhost.dev/blog/the-10-best-heroku-alternatives-in-2026/",
+        "date": "2026-07-10 04:48:21 +00:00",
+        "snippet": null
+       },
+       {
+        "title": "13 Best Heroku Alternatives for 2026 - Ecommerce Launcher",
+        "url": "https://ecommercelauncher.com/build/best-heroku-alternatives",
+        "date": "2026-03-04 04:48:21 +00:00",
+        "snippet": null
+       },
+       {
+        "title": "Top 14 Heroku Alternatives (2026)",
+        "url": "https://www.bunnyshell.com/comparisons/heroku-alternatives/",
+        "date": "2026-03-18 04:48:21 +00:00",
+        "snippet": null
+       },
+       {
+        "title": "Heroku Alternatives in 2026: Where to Deploy After the Free Tier Ended",
+        "url": "https://danubedata.ro/blog/heroku-alternatives-2026",
+        "date": "2026-07-23 04:48:21 +00:00",
+        "snippet": null
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

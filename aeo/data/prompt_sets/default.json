@@ -1,0 +1,234 @@
+{
+ "name": "default",
+ "description": "40 developer prompts in 6 clusters. Clusters e_compare and f_render name Render in the prompt, so they are excluded from organic metrics.",
+ "clusters": {
+  "a_stack": "Where to deploy an app on a given stack",
+  "b_ai": "AI workloads: agents, MCP servers, LLM pipelines, durable workflows",
+  "c_alt": "Alternatives to a named platform",
+  "d_infra": "Infrastructure needs: Postgres, Redis, cron, WebSockets, workers",
+  "e_compare": "Render vs a named competitor (branded)",
+  "f_render": "Questions about Render facts (branded)"
+ },
+ "branded_clusters": [
+  "e_compare",
+  "f_render"
+ ],
+ "prompts": [
+  {
+   "id": "a01",
+   "cluster": "a_stack",
+   "prompt": "Where should I deploy my Django app with a Postgres database? I want something simpler than AWS.",
+   "core": true
+  },
+  {
+   "id": "a02",
+   "cluster": "a_stack",
+   "prompt": "What is the best place to host a FastAPI backend in production in 2026?"
+  },
+  {
+   "id": "a03",
+   "cluster": "a_stack",
+   "prompt": "Best hosting platform for a Ruby on Rails app with Sidekiq workers?"
+  },
+  {
+   "id": "a04",
+   "cluster": "a_stack",
+   "prompt": "Where can I deploy a Node.js Express API cheaply?"
+  },
+  {
+   "id": "a05",
+   "cluster": "a_stack",
+   "prompt": "Where should I host a Next.js app if I don't want to use Vercel?",
+   "core": true
+  },
+  {
+   "id": "a06",
+   "cluster": "a_stack",
+   "prompt": "How do I deploy a SvelteKit app with a Node adapter? Which hosting providers are good?"
+  },
+  {
+   "id": "a07",
+   "cluster": "a_stack",
+   "prompt": "What's the easiest way to deploy a Go web service to the cloud?"
+  },
+  {
+   "id": "b01",
+   "cluster": "b_ai",
+   "prompt": "Where should I host a long-running AI agent that needs to run for hours?",
+   "core": true
+  },
+  {
+   "id": "b02",
+   "cluster": "b_ai",
+   "prompt": "How do I host a remote MCP server? Which platforms are best?",
+   "core": true
+  },
+  {
+   "id": "b03",
+   "cluster": "b_ai",
+   "prompt": "Best way to run background jobs for LLM pipelines in production?",
+   "core": true
+  },
+  {
+   "id": "b04",
+   "cluster": "b_ai",
+   "prompt": "Where can I deploy a LangGraph app to production?"
+  },
+  {
+   "id": "b05",
+   "cluster": "b_ai",
+   "prompt": "How do I deploy a CrewAI multi-agent app as an API?"
+  },
+  {
+   "id": "b06",
+   "cluster": "b_ai",
+   "prompt": "What is a good durable workflow engine for AI tasks with retries?",
+   "core": true
+  },
+  {
+   "id": "b07",
+   "cluster": "b_ai",
+   "prompt": "Where should I host an AI chatbot backend with streaming responses?"
+  },
+  {
+   "id": "c01",
+   "cluster": "c_alt",
+   "prompt": "What are the best Heroku alternatives in 2026?",
+   "core": true
+  },
+  {
+   "id": "c02",
+   "cluster": "c_alt",
+   "prompt": "What are good Railway alternatives?",
+   "core": true
+  },
+  {
+   "id": "c03",
+   "cluster": "c_alt",
+   "prompt": "What are Vercel alternatives for full-stack apps with a backend?",
+   "core": true
+  },
+  {
+   "id": "c04",
+   "cluster": "c_alt",
+   "prompt": "Best PaaS for startups that want to avoid managing Kubernetes?"
+  },
+  {
+   "id": "c05",
+   "cluster": "c_alt",
+   "prompt": "I'm migrating off Heroku. Where should I move my app and database?"
+  },
+  {
+   "id": "d01",
+   "cluster": "d_infra",
+   "prompt": "Cheapest managed Postgres hosting for a small production app?",
+   "core": true
+  },
+  {
+   "id": "d02",
+   "cluster": "d_infra",
+   "prompt": "Where can I get a managed Redis or Valkey instance for a side project?"
+  },
+  {
+   "id": "d03",
+   "cluster": "d_infra",
+   "prompt": "Best way to run cron jobs in the cloud without managing a server?"
+  },
+  {
+   "id": "d04",
+   "cluster": "d_infra",
+   "prompt": "Which hosting platforms support WebSockets for a real-time app?"
+  },
+  {
+   "id": "d05",
+   "cluster": "d_infra",
+   "prompt": "Which PaaS offers private networking between services?"
+  },
+  {
+   "id": "d06",
+   "cluster": "d_infra",
+   "prompt": "Easiest way to deploy a Docker container to production?",
+   "core": true
+  },
+  {
+   "id": "d07",
+   "cluster": "d_infra",
+   "prompt": "Where can I host a background worker that processes a queue?"
+  },
+  {
+   "id": "e01",
+   "cluster": "e_compare",
+   "prompt": "Render vs Railway: which should I choose?",
+   "core": true
+  },
+  {
+   "id": "e02",
+   "cluster": "e_compare",
+   "prompt": "Render vs Fly.io for a web app with a database?",
+   "core": true
+  },
+  {
+   "id": "e03",
+   "cluster": "e_compare",
+   "prompt": "Render vs Heroku in 2026: pricing and features?"
+  },
+  {
+   "id": "e04",
+   "cluster": "e_compare",
+   "prompt": "Render vs Vercel for a Next.js app with a backend API?"
+  },
+  {
+   "id": "e05",
+   "cluster": "e_compare",
+   "prompt": "Render vs DigitalOcean App Platform?"
+  },
+  {
+   "id": "f01",
+   "cluster": "f_render",
+   "prompt": "What are the limits of Render's free tier? Do free web services spin down?",
+   "core": true
+  },
+  {
+   "id": "f02",
+   "cluster": "f_render",
+   "prompt": "What is Render Workflows?",
+   "core": true
+  },
+  {
+   "id": "f03",
+   "cluster": "f_render",
+   "prompt": "How much does a Starter web service cost on Render?"
+  },
+  {
+   "id": "f04",
+   "cluster": "f_render",
+   "prompt": "Does Render support persistent disks?"
+  },
+  {
+   "id": "f05",
+   "cluster": "f_render",
+   "prompt": "Does Render have an MCP server? What can it do?",
+   "core": true
+  },
+  {
+   "id": "f06",
+   "cluster": "f_render",
+   "prompt": "How long does a free Postgres database last on Render?"
+  },
+  {
+   "id": "f07",
+   "cluster": "f_render",
+   "prompt": "Does Render support autoscaling and private services?"
+  },
+  {
+   "id": "f08",
+   "cluster": "f_render",
+   "prompt": "What regions does Render support?"
+  },
+  {
+   "id": "f09",
+   "cluster": "f_render",
+   "prompt": "Can I run background workers and cron jobs on Render, and how are they billed?"
+  }
+ ]
+}

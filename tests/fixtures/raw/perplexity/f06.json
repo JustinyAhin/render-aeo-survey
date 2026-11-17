@@ -1,0 +1,204 @@
+{
+ "engine": "perplexity",
+ "tool": "dataforseo.x.ai-optimization-perplexity-llm-responses-live",
+ "prompt_id": "f06",
+ "cluster": "f_render",
+ "prompt": "How long does a free Postgres database last on Render?",
+ "fetched_at": "2026-11-17T04:53:32Z",
+ "treg": {
+  "http_status": 200,
+  "call_id": "77f1dc65af324dfabaec266028deaf28",
+  "charged_micro": 5695
+ },
+ "result": {
+  "version": "0.1.20261103",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "time": "2.1287 sec.",
+  "cost": 0.005695,
+  "tasks_count": 1,
+  "tasks_error": 0,
+  "tasks": [
+   {
+    "id": "11170453-2171-0612-0000-b884902f3b23",
+    "status_code": 20000,
+    "status_message": "Ok.",
+    "time": "2.1157 sec.",
+    "cost": 0.005695,
+    "result_count": 1,
+    "path": [
+     "v3",
+     "ai_optimization",
+     "perplexity",
+     "llm_responses",
+     "live"
+    ],
+    "data": {
+     "api": "ai_optimization",
+     "function": "llm_responses",
+     "se": "perplexity",
+     "model_name": "sonar",
+     "user_prompt": "How long does a free Postgres database last on Render?",
+     "web_search_country_iso_code": "US"
+    },
+    "result": [
+     {
+      "model_name": "sonar",
+      "input_tokens": 19,
+      "output_tokens": 76,
+      "reasoning_tokens": 0,
+      "web_search": true,
+      "money_spent": 0.005095,
+      "datetime": "2026-11-17 04:53:31 +00:00",
+      "items": [
+       {
+        "type": "message",
+        "sections": [
+         {
+          "type": "text",
+          "text": "A free Render Postgres database lasts **30 days from creation**, whether it\u2019s active or idle. After that, it enters a **14-day grace period** during which you can upgrade to a paid plan; otherwise, Render deletes the database and its data on approximately day 44.[2]\n\nFree databases also have a **1 GB storage limit** and no backups.[2]",
+          "annotations": [
+           {
+            "title": "How much does cloud application hosting cost for small ...",
+            "url": "https://render.com/articles/how-much-does-cloud-application-hosting-cost-for-small-businesses",
+            "start_index": null,
+            "end_index": null,
+            "text": null
+           },
+           {
+            "title": "Deploy for Free \u2013 Render Docs",
+            "url": "https://render.com/docs/free",
+            "start_index": null,
+            "end_index": null,
+            "text": null
+           },
+           {
+            "title": "Your First Render Deploy",
+            "url": "https://render.com/docs/your-first-deploy",
+            "start_index": null,
+            "end_index": null,
+            "text": null
+           },
+           {
+            "title": "Free PostgreSQL instances now expire after 30 days ... - Render",
+            "url": "https://render.com/changelog/free-postgresql-instances-now-expire-after-30-days-previously-90",
+            "start_index": null,
+            "end_index": null,
+            "text": null
+           },
+           {
+            "title": "From side project to production: scaling your first app",
+            "url": "https://render.com/articles/from-side-project-to-production-scaling-your-first-app",
+            "start_index": null,
+            "end_index": null,
+            "text": null
+           },
+           {
+            "title": "Cheapest Postgres hosting for developers (2026)",
+            "url": "https://neon.com/guides/cheapest-postgres-hosting-developers-2026",
+            "start_index": null,
+            "end_index": null,
+            "text": null
+           },
+           {
+            "title": "Platforms with a real free tier for developers in 2026 - Render",
+            "url": "https://render.com/articles/platforms-with-a-real-free-tier-for-developers-in-2026",
+            "start_index": null,
+            "end_index": null,
+            "text": null
+           },
+           {
+            "title": "Move a local Postgres database online (2026)",
+            "url": "https://www.prisma.io/blog/from-local-to-production-with-prisma-postgres",
+            "start_index": null,
+            "end_index": null,
+            "text": null
+           },
+           {
+            "title": "We tell readers Render's free Postgres lasts 90 days on five ...",
+            "url": "https://github.com/robhunter/agentdeals/issues/1572",
+            "start_index": null,
+            "end_index": null,
+            "text": null
+           },
+           {
+            "title": "All New Free Instance Types On Render",
+            "url": "https://render-www.onrender.com/blog/free-tier",
+            "start_index": null,
+            "end_index": null,
+            "text": null
+           }
+          ]
+         }
+        ]
+       }
+      ],
+      "fan_out_queries": null,
+      "search_results": [
+       {
+        "title": "How much does cloud application hosting cost for small ...",
+        "url": "https://render.com/articles/how-much-does-cloud-application-hosting-cost-for-small-businesses",
+        "date": "2026-11-16 00:00:00 +00:00",
+        "snippet": "# How much does cloud application hosting cost for small businesses\n## Render Postgres\nFree Postgres databases expire 30 days after creation.\nAfter expiry, you have a 14-day grace period to upgrade before deletion.\nFree databases are capped at 1 GB.\n...\n## Free tier limits\n- **Free Postgres** databa..."
+       },
+       {
+        "title": "Deploy for Free \u2013 Render Docs",
+        "url": "https://render.com/docs/free",
+        "date": "2026-10-16 00:00:00 +00:00",
+        "snippet": "## Free web services\n### Local files lost on redeploy\n**For long-term data storage:**\n- *Paid* services can preserve local filesystem changes by attaching a persistent disk, but Free web services *cannot*.\n- Paid *and* Free services can persist relational data in a Render Postgres database.\n- Note t..."
+       },
+       {
+        "title": "Your First Render Deploy",
+        "url": "https://render.com/docs/your-first-deploy",
+        "date": "2026-11-13 00:00:00 +00:00",
+        "snippet": "Render provides fully managed Postgres and Key Value instances for your data needs.\nBoth provide a Free compute plan to help you get started.\n**Free Render Postgres databases expire 30 days after creation.**\nYou can upgrade to a paid instance at any time to keep your data.\nLearn more about free inst..."
+       },
+       {
+        "title": "Free PostgreSQL instances now expire after 30 days ... - Render",
+        "url": "https://render.com/changelog/free-postgresql-instances-now-expire-after-30-days-previously-90",
+        "date": "2026-11-12 00:00:00 +00:00",
+        "snippet": "Free PostgreSQL instances now expire after 30 days (previously 90) | Render Changelog\n- Ship faster\n...\n- - Render + Coding Agents\n...\n# Changelog\n## Free PostgreSQL instances now expire after 30 days (previously 90)\nAs of **2024-05-20**, newly created Free Render PostgreSQL databases expire after 3..."
+       },
+       {
+        "title": "From side project to production: scaling your first app",
+        "url": "https://render.com/articles/from-side-project-to-production-scaling-your-first-app",
+        "date": "2026-11-12 00:00:00 +00:00",
+        "snippet": "# From side project to production: scaling your first app\n## Render's free tier is built for hobby projects, not durable production\n- Free Postgres: 1 GB storage, capped at 100 connections, one instance per workspace, no backups, and no managed connection pooling\n- Free Postgres databases are delete..."
+       },
+       {
+        "title": "Cheapest Postgres hosting for developers (2026)",
+        "url": "https://neon.com/guides/cheapest-postgres-hosting-developers-2026",
+        "date": "2026-11-13 00:00:00 +00:00",
+        "snippet": "# Cheapest Postgres hosting for developers (2026)\nSee which free tiers last and which run out of credits.\n...\n## What should you look for in a free Postgres plan?\n|Provider|Free offer|How long it lasts|Databases|Free egress|Credit card|\n|--|--|--|--|--|--|\n|**Neon**|Free plan, with 100 CU-hours per ..."
+       },
+       {
+        "title": "Platforms with a real free tier for developers in 2026 - Render",
+        "url": "https://render.com/articles/platforms-with-a-real-free-tier-for-developers-in-2026",
+        "date": "2026-11-12 00:00:00 +00:00",
+        "snippet": "Free PostgreSQL databases have a fixed storage capacity of 1 GB and expire 30 days after creation \u2014 after which you have a 14-day grace period to upgrade before the database and its data are deleted.\n...\nThe serverless model means your backend logic must complete within the timeout window; anything ..."
+       },
+       {
+        "title": "Move a local Postgres database online (2026)",
+        "url": "https://www.prisma.io/blog/from-local-to-production-with-prisma-postgres",
+        "date": "2026-11-12 00:00:00 +00:00",
+        "snippet": "Render also takes three steps, Railway four and Supabase five.\nThey differ on what a free database does when you leave it alone: Prisma Postgres and Neon keep it with no time limit, Supabase pauses a free project after a week without activity, Render's free database expires 30 days after creation, a..."
+       },
+       {
+        "title": "We tell readers Render's free Postgres lasts 90 days on five ...",
+        "url": "https://github.com/robhunter/agentdeals/issues/1572",
+        "date": "2026-11-06 00:00:00 +00:00",
+        "snippet": "Render's own documentation, https://render.com/docs/free, states it twice on one page:\n> **30-day limit.** Free Render Postgres databases expire 30 days after creation.\nAn expired Free database is inaccessible unless you upgrade it to a paid compute plan.\nAfter a Free database expires, you have a gr..."
+       },
+       {
+        "title": "All New Free Instance Types On Render",
+        "url": "https://render-www.onrender.com/blog/free-tier",
+        "date": "2026-11-12 00:00:00 +00:00",
+        "snippet": "We know most web services need a persistent store, so we\u2019re also launching a free PostgreSQL instance type today.\nDatabases on the free instance type come with 1GB of SSD storage.\nFree databases expire in 90 days, but we\u2019re working to make perpetually free PostgreSQL databases available in early 202..."
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

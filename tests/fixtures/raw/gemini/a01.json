@@ -1,0 +1,76 @@
+{
+ "engine": "gemini",
+ "tool": "cloro.ai-search.gemini.scrape",
+ "prompt_id": "a01",
+ "cluster": "a_stack",
+ "prompt": "Where should I deploy my Django app with a Postgres database? I want something simpler than AWS.",
+ "fetched_at": "2026-11-17T04:49:24Z",
+ "treg": {
+  "http_status": 200,
+  "call_id": "760a7bea936d46cd9ce1bcb4e1ba9e8b",
+  "charged_micro": 2400
+ },
+ "result": {
+  "success": true,
+  "result": {
+   "text": "If you want to avoid the massive configuration overhead of AWS (IAM roles, VPCs, security groups, RDS, and ECS), Platform-as-a-Service (PaaS) providers or managed VPS setups are your best bet. They let you deploy your Django app and attach a PostgreSQL database with just a few clicks or commands.\n\nThe top alternatives to AWS for a Django + Postgres setup, ranked by simplicity, include:\n\n1. Render (The Easiest Heroku Alternative)\n\nRender is widely considered the spiritual successor to early Heroku\u2014clean, predictable, and managed.\n\nHow it works: You connect your GitHub repository. Render reads your code (or a simple Dockerfile / requirements.txt), builds your app, handles your web process, and lets you spin up a managed PostgreSQL database with a single click.\n\nPros: Incredibly straightforward dashboard, automatic SSL certificates, and zero infrastructure to manage.\n\nCons: The free tier spins down after inactivity (causing a slight delay on the first request back), so you'll want a paid plan (~$7/mo for the web service + ~$7/mo for the database) for production use.\n\n2. Railway (Fastest for Modern, Connected Stacks)\n\nRailway focuses heavily on developer experience with a gorgeous visual canvas where you map out your services.\n\nHow it works: You drop in your GitHub repo, add a Postgres plugin, and Railway automatically links them together via environment variables.\n\nPros: Extremely fast deployments, excellent handling of environment variables, and seamless support if you later need to add Redis or Celery workers.\n\nCons: Usage-based billing starts around a $5/month hobby tier, and scaling costs can sometimes be less predictable than flat-rate providers if your app gets heavily trafficked.\n\n3. Fly.io (Great for Global Deployment & Docker)\n\nFly.io runs your Django app as lightweight micro-VMs (\"Fly Machines\") close to your users.\n\nHow it works: You run fly launch in your terminal. It inspects your Django project, generates a basic configuration file and Dockerfile, and helps you provision a Postgres database.\n\nPros: Native Docker support gives you total control over your Python environment. Excellent performance and per-second billing.\n\nCons: Requires a bit more comfort with the command line and basic Docker concepts than Render.\n\n4. DigitalOcean App Platform (Predictable & Reliable)\n\nIf you like DigitalOcean's simplicity but want a managed PaaS instead of setting up a raw virtual private server (VPS), their App Platform is a strong contender.\n\nHow it works: Point it to GitHub, specify that it\u2019s a Python/Django app, and add a managed development database.\n\nPros: Very stable, clear fixed pricing, and easy migration paths if you ever want to upgrade to a standard DigitalOcean droplet later.\n\nCons: Less \"magical\" UI than Railway, but far less complex than AWS.\n\nSummary Recommendation\n\nChoose Render if you want the absolute lowest-friction, dashboard-driven experience that just works out of the box.\n\nChoose Railway if you want something lightning-fast with great handling of companion services like Redis.\n\nChoose Fly.io if you already containerize your app with Docker and want low-latency global distribution.",
+   "sources": [
+    {
+     "position": 1,
+     "label": "Best Django Hosting Providers in 2026 (Compared) \u00b7 Learn - Fly.io",
+     "url": "https://fly.io/learn/django-hosting/#:~:text=fly%20launch%20writes%20the%20Dockerfile%20and%20fly.toml,including%20%245%20of%20usage%20%7C%20App%20code%3B",
+     "description": "fly launch writes the Dockerfile and fly.toml | | Render | Platform | \n$7/month, under 1 CPU, 512 MB | App code and a build script | | Railway | \nUsage-billed pla..."
+    },
+    {
+     "position": 2,
+     "label": "Django Hosting: 7 Options Compared (2026) \u2022 Granite.so",
+     "url": "https://granite.so/hosting/django#:~:text=Render's%20free%20tier%2C%20as%20long%20as%20you,at%20a%20working%20site%20the%20same%20afternoon.",
+     "description": "Render's free tier, as long as you accept that the first visitor after an \nidle period waits several seconds for the app to wake up. * The fastest \npath to Django..."
+    }
+   ],
+   "citationPills": [
+    {
+     "label": "Best Django Hosting Providers in 2026 (Compared) \u00b7 Learn - Fly.io",
+     "url": "https://fly.io/learn/django-hosting/#:~:text=fly%20launch%20writes%20the%20Dockerfile%20and%20fly.toml,including%20%245%20of%20usage%20%7C%20App%20code%3B",
+     "domain": "fly.io",
+     "position": 1,
+     "description": "fly launch writes the Dockerfile and fly.toml | | Render | Platform | \n$7/month, under 1 CPU, 512 MB | App code and a build script | | Railway | \nUsage-billed pla...",
+     "citationPillId": 1
+    },
+    {
+     "label": "Best Django Hosting Providers in 2026 (Compared) \u00b7 Learn - Fly.io",
+     "url": "https://fly.io/learn/django-hosting/#:~:text=fly%20launch%20writes%20the%20Dockerfile%20and%20fly.toml,including%20%245%20of%20usage%20%7C%20App%20code%3B",
+     "domain": "fly.io",
+     "position": 1,
+     "description": "fly launch writes the Dockerfile and fly.toml | | Render | Platform | \n$7/month, under 1 CPU, 512 MB | App code and a build script | | Railway | \nUsage-billed pla...",
+     "citationPillId": 2
+    },
+    {
+     "label": "Django Hosting: 7 Options Compared (2026) \u2022 Granite.so",
+     "url": "https://granite.so/hosting/django#:~:text=Render's%20free%20tier%2C%20as%20long%20as%20you,at%20a%20working%20site%20the%20same%20afternoon.",
+     "domain": "granite.so",
+     "position": 2,
+     "description": "Render's free tier, as long as you accept that the first visitor after an \nidle period waits several seconds for the app to wake up. * The fastest \npath to Django...",
+     "citationPillId": 3
+    },
+    {
+     "label": "Best Django Hosting Providers in 2026 (Compared) \u00b7 Learn - Fly.io",
+     "url": "https://fly.io/learn/django-hosting/#:~:text=fly%20launch%20writes%20the%20Dockerfile%20and%20fly.toml,including%20%245%20of%20usage%20%7C%20App%20code%3B",
+     "domain": "fly.io",
+     "position": 1,
+     "description": "fly launch writes the Dockerfile and fly.toml | | Render | Platform | \n$7/month, under 1 CPU, 512 MB | App code and a build script | | Railway | \nUsage-billed pla...",
+     "citationPillId": 4
+    },
+    {
+     "label": "Best Django Hosting Providers in 2026 (Compared) \u00b7 Learn - Fly.io",
+     "url": "https://fly.io/learn/django-hosting/#:~:text=fly%20launch%20writes%20the%20Dockerfile%20and%20fly.toml,including%20%245%20of%20usage%20%7C%20App%20code%3B",
+     "domain": "fly.io",
+     "position": 1,
+     "description": "fly launch writes the Dockerfile and fly.toml | | Render | Platform | \n$7/month, under 1 CPU, 512 MB | App code and a build script | | Railway | \nUsage-billed pla...",
+     "citationPillId": 5
+    }
+   ],
+   "markdown": "If you want to avoid the massive configuration overhead of AWS (IAM roles, VPCs, security groups, RDS, and ECS), Platform-as-a-Service (PaaS) providers or managed VPS setups are your best bet. They let you deploy your Django app and attach a PostgreSQL database with just a few clicks or commands.\n\nThe top alternatives to AWS for a Django + Postgres setup, ranked by simplicity, include:\n\n### 1\\. Render (The Easiest Heroku Alternative)\n\nRender is widely considered the spiritual successor to early Heroku\u2014clean, predictable, and managed.\n\n  * **How it works:** You connect your GitHub repository. Render reads your code (or a simple `Dockerfile` / requirements.txt), builds your app, handles your web process, and lets you spin up a managed PostgreSQL database with a single click. [Best Django Hosting Providers in 2026 (Compared) \u00b7 Learn - Fly.io](https://fly.io/learn/django-hosting/#:~:text=fly%20launch%20writes%20the%20Dockerfile%20and%20fly.toml,including%20%245%20of%20usage%20%7C%20App%20code%3B)\n\n  * **Pros:** Incredibly straightforward dashboard, automatic SSL certificates, and zero infrastructure to manage.\n\n  * **Cons:** The free tier spins down after inactivity (causing a slight delay on the first request back), so you'll want a paid plan (~$7/mo for the web service + ~$7/mo for the database) for production use. [Best Django Hosting Providers in 2026 (Compared) \u00b7 Learn - Fly.io](https://fly.io/learn/django-hosting/#:~:text=fly%20launch%20writes%20the%20Dockerfile%20and%20fly.toml,including%20%245%20of%20usage%20%7C%20App%20code%3B)\n\n### 2\\. Railway (Fastest for Modern, Connected Stacks)\n\nRailway focuses heavily on developer experience with a gorgeous visual canvas where you map out your services.\n\n  * **How it works:** You drop in your GitHub repo, add a Postgres plugin, and Railway automatically links them together via environment variables.\n\n  * **Pros:** Extremely fast deployments, excellent handling of environment variables, and seamless support if you later need to add Redis or Celery workers. [Django Hosting: 7 Options Compared (2026) \u2022 Granite.so](https://granite.so/hosting/django#:~:text=Render's%20free%20tier%2C%20as%20long%20as%20you,at%20a%20working%20site%20the%20same%20afternoon.)\n\n  * **Cons:** Usage-based billing starts around a $5/month hobby tier, and scaling costs can sometimes be less predictable than flat-rate providers if your app gets heavily trafficked. [Best Django Hosting Providers in 2026 (Compared) \u00b7 Learn - Fly.io](https://fly.io/learn/django-hosting/#:~:text=fly%20launch%20writes%20the%20Dockerfile%20and%20fly.toml,including%20%245%20of%20usage%20%7C%20App%20code%3B)\n\n### 3\\. Fly.io (Great for Global Deployment & Docker)\n\nFly.io runs your Django app as lightweight micro-VMs (\"Fly Machines\") close to your users.\n\n  * **How it works:** You run `fly launch` in your terminal. It inspects your Django project, generates a basic configuration file and Dockerfile, and helps you provision a Postgres database. [Best Django Hosting Providers in 2026 (Compared) \u00b7 Learn - Fly.io](https://fly.io/learn/django-hosting/#:~:text=fly%20launch%20writes%20the%20Dockerfile%20and%20fly.toml,including%20%245%20of%20usage%20%7C%20App%20code%3B)\n\n  * **Pros:** Native Docker support gives you total control over your Python environment. Excellent performance and per-second billing.\n\n  * **Cons:** Requires a bit more comfort with the command line and basic Docker concepts than Render.\n\n### 4\\. DigitalOcean App Platform (Predictable & Reliable)\n\nIf you like DigitalOcean's simplicity but want a managed PaaS instead of setting up a raw virtual private server (VPS), their App Platform is a strong contender.\n\n  * **How it works:** Point it to GitHub, specify that it\u2019s a Python/Django app, and add a managed development database.\n\n  * **Pros:** Very stable, clear fixed pricing, and easy migration paths if you ever want to upgrade to a standard DigitalOcean droplet later.\n\n  * **Cons:** Less \"magical\" UI than Railway, but far less complex than AWS.\n\n### Summary Recommendation\n\n  * **Choose Render** if you want the absolute lowest-friction, dashboard-driven experience that just works out of the box.\n\n  * **Choose Railway** if you want something lightning-fast with great handling of companion services like Redis.\n\n  * **Choose Fly.io** if you already containerize your app with Docker and want low-latency global distribution."
+  }
+ }
+}

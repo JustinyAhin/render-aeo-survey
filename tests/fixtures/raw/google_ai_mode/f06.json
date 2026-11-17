@@ -1,0 +1,67 @@
+{
+ "engine": "google_ai_mode",
+ "tool": "cloro.google.serp.ai_mode",
+ "prompt_id": "f06",
+ "cluster": "f_render",
+ "prompt": "How long does a free Postgres database last on Render?",
+ "fetched_at": "2026-11-17T04:52:59Z",
+ "treg": {
+  "http_status": 200,
+  "call_id": "f22cb3d52a184bb5949da552bcbfe381",
+  "charged_micro": 2400
+ },
+ "result": {
+  "success": true,
+  "result": {
+   "text": "On Render, a free PostgreSQL database lasts for 30 days from the date of creation.\n\nKey Timeline & Details\n\nExpiration (Day 30): Once the 30 days are up, the free database becomes inaccessible.\n\nGrace Period (14 days): After expiration, you have a 14-day window to upgrade the database to a paid compute plan to keep your data.\n\nPermanent Deletion: If you do not upgrade within the 14-day grace period, Render permanently deletes the database and all of its data.\n\nNotifications: Render sends automated email warnings as you approach the 30-day expiration mark and again near the end of the grace period.\n\nOther Free Postgres Limits\n\nStorage: Capped at 1 GB of data.\n\nInstances: Limited to 1 active free instance per workspace.\n\nBackups & Pooling: Free databases do not support backups or managed connection pooling.\n\nMaintenance & Restarts: Render can restart or perform maintenance on free databases at any time, causing temporary unavailability.\n\nReview full details directly on the Render Free Tier Documentation.\n\nAre you trying to migrate this data before it expires, or do you need recommendations for free/cheap persistent Postgres alternatives?",
+   "sources": [
+    {
+     "position": 1,
+     "label": "Deploy for Free \u2013 Render Docs",
+     "url": "https://render.com/docs/free",
+     "description": "Render Postgres databases expire 30 days after creation. Render notifies you via email when you're approaching a Free database exp...",
+     "redirectLink": "https://www.google.com/goto?url=CAESWQHEIkXXqCKNBkYpYJgM1PZRvqa6dxD9Ku8Il9d5OBSU-mUSZ4_JNtstSYWAD2zDQcV3Mkl3G3fUkUtbDGuZ6xkolSuTr_stASBHsVJYRmbR7JzEF9ZJeau3"
+    }
+   ],
+   "citationPills": [
+    {
+     "label": "Deploy for Free \u2013 Render Docs",
+     "citationPillId": 1,
+     "url": "https://render.com/docs/free",
+     "domain": "render.com",
+     "description": "Render Postgres databases expire 30 days after creation. Render notifies you via email when you're approaching a Free database exp...",
+     "position": 1,
+     "redirectLink": "https://www.google.com/goto?url=CAESWQHEIkXXqCKNBkYpYJgM1PZRvqa6dxD9Ku8Il9d5OBSU-mUSZ4_JNtstSYWAD2zDQcV3Mkl3G3fUkUtbDGuZ6xkolSuTr_stASBHsVJYRmbR7JzEF9ZJeau3"
+    },
+    {
+     "label": "Deploy for Free \u2013 Render Docs",
+     "citationPillId": 2,
+     "url": "https://render.com/docs/free",
+     "domain": "render.com",
+     "description": "Render Postgres databases expire 30 days after creation. Render notifies you via email when you're approaching a Free database exp...",
+     "position": 1,
+     "redirectLink": "https://www.google.com/goto?url=CAESWQHEIkXXqCKNBkYpYJgM1PZRvqa6dxD9Ku8Il9d5OBSU-mUSZ4_JNtstSYWAD2zDQcV3Mkl3G3fUkUtbDGuZ6xkolSuTr_stASBHsVJYRmbR7JzEF9ZJeau3"
+    },
+    {
+     "label": "Deploy for Free \u2013 Render Docs",
+     "citationPillId": 3,
+     "url": "https://render.com/docs/free",
+     "domain": "render.com",
+     "description": "Render Postgres databases expire 30 days after creation. Render notifies you via email when you're approaching a Free database exp...",
+     "position": 1,
+     "redirectLink": "https://www.google.com/goto?url=CAESWQHEIkXXqCKNBkYpYJgM1PZRvqa6dxD9Ku8Il9d5OBSU-mUSZ4_JNtstSYWAD2zDQcV3Mkl3G3fUkUtbDGuZ6xkolSuTr_stASBHsVJYRmbR7JzEF9ZJeau3"
+    },
+    {
+     "label": "Deploy for Free \u2013 Render Docs",
+     "citationPillId": 4,
+     "url": "https://render.com/docs/free",
+     "domain": "render.com",
+     "description": "Render Postgres databases expire 30 days after creation. Render notifies you via email when you're approaching a Free database exp...",
+     "position": 1,
+     "redirectLink": "https://www.google.com/goto?url=CAESWQHEIkXXqCKNBkYpYJgM1PZRvqa6dxD9Ku8Il9d5OBSU-mUSZ4_JNtstSYWAD2zDQcV3Mkl3G3fUkUtbDGuZ6xkolSuTr_stASBHsVJYRmbR7JzEF9ZJeau3"
+    }
+   ],
+   "markdown": "On Render, a free PostgreSQL database lasts for **30 days** from the date of creation. [Deploy for Free \u2013 Render Docs](https://render.com/docs/free)\n\nKey Timeline & Details\n\n  * **Expiration (Day 30):** Once the 30 days are up, the free database becomes inaccessible.\n\n  * **Grace Period (14 days):** After expiration, you have a 14-day window to upgrade the database to a paid compute plan to keep your data.\n\n  * **Permanent Deletion:** If you do not upgrade within the 14-day grace period, Render permanently deletes the database and all of its data.\n\n  * **Notifications:** Render sends automated email warnings as you approach the 30-day expiration mark and again near the end of the grace period. [Deploy for Free \u2013 Render Docs](https://render.com/docs/free)\n\nOther Free Postgres Limits\n\n  * **Storage:** Capped at **1 GB** of data.\n\n  * **Instances:** Limited to **1 active free instance** per workspace.\n\n  * **Backups & Pooling:** Free databases do **not** support backups or managed connection pooling.\n\n  * **Maintenance & Restarts:** Render can restart or perform maintenance on free databases at any time, causing temporary unavailability. [Deploy for Free \u2013 Render Docs](https://render.com/docs/free)\n\nReview full details directly on the [Render Free Tier Documentation](https://render.com/docs/free). [Deploy for Free \u2013 Render Docs](https://render.com/docs/free)\n\nAre you trying to migrate this data before it expires, or do you need recommendations for **free/cheap persistent Postgres alternatives**?"
+  }
+ }
+}

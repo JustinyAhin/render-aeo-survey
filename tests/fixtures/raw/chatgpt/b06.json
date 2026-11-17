@@ -1,0 +1,427 @@
+{
+ "engine": "chatgpt",
+ "tool": "cloro.ai-search.chatgpt.scrape",
+ "prompt_id": "b06",
+ "cluster": "b_ai",
+ "prompt": "What is a good durable workflow engine for AI tasks with retries?",
+ "fetched_at": "2026-11-17T04:47:16Z",
+ "treg": {
+  "http_status": 200,
+  "call_id": "c06945ca530643a7b1fb2c723bfeb146",
+  "charged_micro": 2800
+ },
+ "result": {
+  "success": true,
+  "result": {
+   "model": null,
+   "text": "My top recommendation is Temporal.\n\nIf you're building AI agents, LLM pipelines, or autonomous background tasks that need reliable retries, state persistence, and recovery after crashes, Temporal is one of the strongest choices.\n\nThe important distinction is that you want a durable execution engine, not just a task queue.\n\nA task queue retries failed jobs. A durable workflow engine remembers where a multi-step process stopped and resumes from the last successfully completed step.\n\nMy top 5 recommendations\n\nEngine\nBest for\nMain advantage\n1. Temporal\nProduction AI agents\nExcellent durability, retries, replay\n2. Inngest\nTypeScript/Next.js applications\nExcellent developer experience, minimal infrastructure\n3. Hatchet\nPython/TypeScript AI workloads\nDurable tasks, retries, concurrency\n4. Restate\nStateful AI agents\nLightweight durable execution model\n5. DBOS\nPostgres-based applications\nDurable workflows using infrastructure you already have\n\n1. Temporal \u2014 Best overall\n\nTemporal documentation\n\nWhy I like it:\n\nAutomatic retries with exponential backoff.\nPersistent workflow state.\nSurvives worker crashes and deployments.\nSupports Python, TypeScript, Go, Java, and more.\nSupports long-running workflows (hours, days, or months).\nWorkflow replay and execution history.\nSignals and human approval steps.\n\nParticularly useful for AI agents that call multiple APIs or execute expensive LLM operations.\n\nOne consideration: Temporal requires more infrastructure and has deterministic workflow programming constraints.\n\n2. Inngest \u2014 Best developer experience\n\nInngest documentation\n\nI'd consider this if you're building with TypeScript.\n\nFeatures:\n\nDurable execution steps.\nAutomatic retries.\nEvent-driven execution.\nConcurrency controls.\nRate limiting.\nScheduled execution.\nHuman-in-the-loop workflows.\n\nIt's easier to get started with than Temporal, particularly for web applications.\n\n3. Hatchet \u2014 Best middle ground\n\nHatchet documentation\n\nWorth considering if you want:\n\nPython-first AI workflows.\nDurable task execution.\nAutomatic retries.\nWorkflow recovery.\nTask prioritization.\nWorker concurrency controls.\nSelf-hosting.\n\nIt has a particularly interesting model for AI workloads where individual tasks need checkpointing.\n\n4. Restate \u2014 Interesting alternative\n\nRestate documentation\n\nGood for:\n\nStateful AI agents.\nDurable function execution.\nLong-running processes.\nExternal API calls.\nPersistent state and recovery.\n\nIts programming model is worth investigating if you want durable execution without adopting Temporal's architecture.\n\nHow I'd architect an AI workflow\n\nRegardless of which engine you choose, I'd structure execution like this:\n\nWorkflow Engine\n|\nv\nAI Task Started\n|\nv\nCall LLM / Agent\n|\n+-----+-----+\n| |\nSuccess Failure\n| |\nv v\nSave Result Retry Policy\n| |\n| Exponential\n| Backoff\n| |\n| Retry Task\n| |\n+-----+-----+\n|\nv\nNext Workflow Step\n|\nv\nWorkflow Complete\n\nI'd make each external operation a separately tracked step:\n\nLLM calls\nTool execution\nAPI requests\nDatabase writes\nFile processing\nAgent-to-agent delegation\n\nImportant: Make external operations idempotent. A retry must not accidentally charge a customer twice, create duplicate records, or repeat an irreversible operation.\n\nAlso distinguish transient failures (429, network errors, timeouts) from permanent failures (invalid input, authorization errors).\n\nMy recommendation\n\nI'd narrow it down to three:\n\nTemporal: If reliability and long-running workflows are your highest priorities.\nInngest: If you want simplicity and a great TypeScript developer experience.\nHatchet: If you want a self-hostable, Python-friendly task orchestration platform.\n\nFor a serious production AI system, I'd personally start with Temporal.\n\nOne question that would help narrow this down\n\nWhat kind of AI tasks are you orchestrating?\n\nAI agents: Agents calling tools, reasoning, and executing multi-step tasks.\nLLM pipelines: Chains of prompts, model calls, and data transformations.\nBackground jobs: Independent AI tasks with retries and status tracking.\nLong-running workflows: Tasks that can take hours or days, pause for human approval, and resume later.\nMulti-agent orchestration: Multiple agents coordinating and delegating work.\n\nThe distinction matters because the best engine for simple LLM jobs isn't necessarily the best engine for autonomous agents.",
+   "sources": [
+    {
+     "position": 1,
+     "label": "Temporal documentation",
+     "url": "https://docs.temporal.io/workflows",
+     "footnote": false
+    },
+    {
+     "position": 2,
+     "label": "Inngest documentation",
+     "url": "https://www.inngest.com/docs/durable-execution/durable-workflows",
+     "footnote": false
+    },
+    {
+     "position": 3,
+     "label": "Hatchet documentation",
+     "url": "https://hatchet.run/platform/durable-execution",
+     "footnote": false
+    },
+    {
+     "position": 4,
+     "label": "Restate documentation",
+     "url": "https://docs.restate.dev/",
+     "footnote": false
+    },
+    {
+     "position": 5,
+     "label": "",
+     "url": "https://agentopsguide.com/temporal-vs-inngest-vs-restate/",
+     "footnote": true
+    },
+    {
+     "position": 6,
+     "label": "",
+     "url": "https://arize.com/resources/best-agent-orchestration-tools/",
+     "footnote": true
+    },
+    {
+     "position": 7,
+     "label": "",
+     "url": "https://assets.temporal.io/durable-execution.pdf",
+     "footnote": true
+    },
+    {
+     "position": 8,
+     "label": "",
+     "url": "https://debuly.com/blog/how-to-run-durable-background-workflows-for-ai-agents",
+     "footnote": true
+    },
+    {
+     "position": 9,
+     "label": "",
+     "url": "https://docs.hatchet.run/v1/from-temporal-to-hatchet",
+     "footnote": true
+    },
+    {
+     "position": 10,
+     "label": "",
+     "url": "https://docs.temporal.io/encyclopedia/retry-policies?trk=article-ssr-frontend-pulse_little-text-block",
+     "footnote": true
+    },
+    {
+     "position": 11,
+     "label": "",
+     "url": "https://docs.temporal.io/evaluate/understanding-temporal",
+     "footnote": true
+    },
+    {
+     "position": 12,
+     "label": "",
+     "url": "https://docs.temporal.io/workflow-execution?trk=article-ssr-frontend-pulse_little-text-block",
+     "footnote": true
+    },
+    {
+     "position": 13,
+     "label": "",
+     "url": "https://github.com/inngest/website/blob/main/pages/docs/durable-execution/durable-workflows.mdx",
+     "footnote": true
+    },
+    {
+     "position": 14,
+     "label": "",
+     "url": "https://github.com/temporalio/documentation/blob/main/docs/develop/python/best-practices/error-handling.mdx",
+     "footnote": true
+    },
+    {
+     "position": 15,
+     "label": "",
+     "url": "https://hatchet.run/use-cases/durable-execution",
+     "footnote": true
+    },
+    {
+     "position": 16,
+     "label": "",
+     "url": "https://llmbook.icsgen-ai.org/part-13-llmops-lifecycle/module-64-workflow-orchestration/section-64.2.html",
+     "footnote": true
+    },
+    {
+     "position": 17,
+     "label": "",
+     "url": "https://pjsofts.github.io/blog/durable-execution-for-agents/",
+     "footnote": true
+    },
+    {
+     "position": 18,
+     "label": "",
+     "url": "https://pulse-forge.io/benchmarks/durable-agent-workflows",
+     "footnote": true
+    },
+    {
+     "position": 19,
+     "label": "",
+     "url": "https://startupik.com/durable-execution-engine-ai-agents/",
+     "footnote": true
+    },
+    {
+     "position": 20,
+     "label": "",
+     "url": "https://ttlab.hopto.org/blog/culture/2026-05-15-workflow-engines-2026-temporal-inngest-trigger-hatchet-restate-dbos-airflow-deep-dive?lang=en",
+     "footnote": true
+    },
+    {
+     "position": 21,
+     "label": "",
+     "url": "https://ttlab.hopto.org/blog/culture/2026-05-16-durable-workflow-engines-2026-temporal-restate-hatchet-inngest-trigger-dev-cadence-dapr-orchestra-deep-dive?lang=en",
+     "footnote": true
+    },
+    {
+     "position": 22,
+     "label": "",
+     "url": "https://turion.ai/blog/temporal-vs-restate-vs-hatchet-vs-inngest-durable-execution-agents-2026/",
+     "footnote": true
+    },
+    {
+     "position": 23,
+     "label": "",
+     "url": "https://ultrametric.ai/arena/durable-workflows",
+     "footnote": true
+    },
+    {
+     "position": 24,
+     "label": "",
+     "url": "https://www.dbos.dev/compare",
+     "footnote": true
+    },
+    {
+     "position": 25,
+     "label": "",
+     "url": "https://www.martinfowler.com/articles/durable-execution-agents.html",
+     "footnote": true
+    },
+    {
+     "position": 26,
+     "label": "",
+     "url": "https://www.thoughtworks.com/content/dam/thoughtworks/documents/radar/2026/11/tr_technology_radar_vol_35_en.pdf",
+     "footnote": true
+    },
+    {
+     "position": 27,
+     "label": "",
+     "url": "https://www.workflowbuilder.io/blog/ai-orchestration-tools",
+     "footnote": true
+    }
+   ],
+   "entities": [
+    {
+     "type": "software",
+     "name": "Temporal"
+    },
+    {
+     "type": "software",
+     "name": "Inngest"
+    },
+    {
+     "type": "software",
+     "name": "Hatchet"
+    },
+    {
+     "type": "software",
+     "name": "Restate"
+    },
+    {
+     "type": "software",
+     "name": "DBOS"
+    }
+   ],
+   "map": [],
+   "followUpForm": null,
+   "markdown": "My top recommendation is **Temporal**.\n\nIf you're building AI agents, LLM pipelines, or autonomous background tasks that need reliable retries, state persistence, and recovery after crashes, Temporal is one of the strongest choices.\n\nThe important distinction is that you want a **durable execution engine**, not just a task queue.\n\nA task queue retries failed jobs. A durable workflow engine remembers where a multi-step process stopped and resumes from the last successfully completed step.\n\n## My top 5 recommendations\n\n| Engine | Best for | Main advantage |\n|---|---|---|\n| **1. Temporal** | Production AI agents | Excellent durability, retries, replay |\n| **2. Inngest** | TypeScript/Next.js applications | Excellent developer experience, minimal infrastructure |\n| **3. Hatchet** | Python/TypeScript AI workloads | Durable tasks, retries, concurrency |\n| **4. Restate** | Stateful AI agents | Lightweight durable execution model |\n| **5. DBOS** | Postgres-based applications | Durable workflows using infrastructure you already have |\n\n### 1. Temporal \u2014 Best overall\n\n[Temporal documentation](https://docs.temporal.io/workflows?utm_source=chatgpt.com)\n\nWhy I like it:\n- Automatic retries with exponential backoff.\n- Persistent workflow state.\n- Survives worker crashes and deployments.\n- Supports Python, TypeScript, Go, Java, and more.\n- Supports long-running workflows (hours, days, or months).\n- Workflow replay and execution history.\n- Signals and human approval steps.\n\nParticularly useful for AI agents that call multiple APIs or execute expensive LLM operations.\n\nOne consideration: Temporal requires more infrastructure and has deterministic workflow programming constraints.\n\n### 2. Inngest \u2014 Best developer experience\n\n[Inngest documentation](https://www.inngest.com/docs/durable-execution/durable-workflows?utm_source=chatgpt.com)\n\nI'd consider this if you're building with TypeScript.\n\nFeatures:\n- Durable execution steps.\n- Automatic retries.\n- Event-driven execution.\n- Concurrency controls.\n- Rate limiting.\n- Scheduled execution.\n- Human-in-the-loop workflows.\n\nIt's easier to get started with than Temporal, particularly for web applications.\n\n### 3. Hatchet \u2014 Best middle ground\n\n[Hatchet documentation](https://hatchet.run/platform/durable-execution?utm_source=chatgpt.com)\n\nWorth considering if you want:\n- Python-first AI workflows.\n- Durable task execution.\n- Automatic retries.\n- Workflow recovery.\n- Task prioritization.\n- Worker concurrency controls.\n- Self-hosting.\n\nIt has a particularly interesting model for AI workloads where individual tasks need checkpointing.\n\n### 4. Restate \u2014 Interesting alternative\n\n[Restate documentation](https://docs.restate.dev/?utm_source=chatgpt.com)\n\nGood for:\n- Stateful AI agents.\n- Durable function execution.\n- Long-running processes.\n- External API calls.\n- Persistent state and recovery.\n\nIts programming model is worth investigating if you want durable execution without adopting Temporal's architecture.\n\n---\n\n## How I'd architect an AI workflow\n\nRegardless of which engine you choose, I'd structure execution like this:\n\n```text\n           Workflow Engine\n                 |\n                 v\n          AI Task Started\n                 |\n                 v\n          Call LLM / Agent\n                 |\n           +-----+-----+\n           |           |\n         Success     Failure\n           |           |\n           v           v\n       Save Result   Retry Policy\n           |           |\n           |       Exponential\n           |         Backoff\n           |           |\n           |       Retry Task\n           |           |\n           +-----+-----+\n                 |\n                 v\n           Next Workflow Step\n                 |\n                 v\n           Workflow Complete\n```\n\nI'd make each external operation a separately tracked step:\n\n- LLM calls\n- Tool execution\n- API requests\n- Database writes\n- File processing\n- Agent-to-agent delegation\n\n**Important:** Make external operations idempotent. A retry must not accidentally charge a customer twice, create duplicate records, or repeat an irreversible operation.\n\nAlso distinguish transient failures (429, network errors, timeouts) from permanent failures (invalid input, authorization errors).\n\n## My recommendation\n\nI'd narrow it down to three:\n\n- **Temporal:** If reliability and long-running workflows are your highest priorities.\n- **Inngest:** If you want simplicity and a great TypeScript developer experience.\n- **Hatchet:** If you want a self-hostable, Python-friendly task orchestration platform.\n\nFor a serious production AI system, I'd personally start with Temporal.\n\n---\n\n## One question that would help narrow this down\n\nWhat kind of AI tasks are you orchestrating?\n\n1. **AI agents:** Agents calling tools, reasoning, and executing multi-step tasks.\n2. **LLM pipelines:** Chains of prompts, model calls, and data transformations.\n3. **Background jobs:** Independent AI tasks with retries and status tracking.\n4. **Long-running workflows:** Tasks that can take hours or days, pause for human approval, and resume later.\n5. **Multi-agent orchestration:** Multiple agents coordinating and delegating work.\n\nThe distinction matters because the best engine for simple LLM jobs isn't necessarily the best engine for autonomous agents.",
+   "citationPills": [
+    {
+     "url": "https://docs.temporal.io/workflows",
+     "label": "Temporal documentation",
+     "domain": "docs.temporal.io",
+     "type": "groupedWebpage",
+     "citationPillId": 0,
+     "position": 1
+    },
+    {
+     "url": "https://www.inngest.com/docs/durable-execution/durable-workflows",
+     "label": "Inngest documentation",
+     "domain": "inngest.com",
+     "type": "groupedWebpage",
+     "citationPillId": 1,
+     "position": 2
+    },
+    {
+     "url": "https://hatchet.run/platform/durable-execution",
+     "label": "Hatchet documentation",
+     "domain": "hatchet.run",
+     "type": "groupedWebpage",
+     "citationPillId": 2,
+     "position": 3
+    },
+    {
+     "url": "https://docs.restate.dev/",
+     "label": "Restate documentation",
+     "domain": "docs.restate.dev",
+     "type": "groupedWebpage",
+     "citationPillId": 3,
+     "position": 4
+    },
+    {
+     "url": "https://agentopsguide.com/temporal-vs-inngest-vs-restate/",
+     "label": "",
+     "domain": "agentopsguide.com",
+     "type": "groupedWebpage",
+     "citationPillId": 4,
+     "position": 5
+    },
+    {
+     "url": "https://arize.com/resources/best-agent-orchestration-tools/",
+     "label": "",
+     "domain": "arize.com",
+     "type": "groupedWebpage",
+     "citationPillId": 5,
+     "position": 6
+    },
+    {
+     "url": "https://assets.temporal.io/durable-execution.pdf",
+     "label": "",
+     "domain": "assets.temporal.io",
+     "type": "groupedWebpage",
+     "citationPillId": 6,
+     "position": 7
+    },
+    {
+     "url": "https://debuly.com/blog/how-to-run-durable-background-workflows-for-ai-agents",
+     "label": "",
+     "domain": "debuly.com",
+     "type": "groupedWebpage",
+     "citationPillId": 7,
+     "position": 8
+    },
+    {
+     "url": "https://docs.hatchet.run/v1/from-temporal-to-hatchet",
+     "label": "",
+     "domain": "docs.hatchet.run",
+     "type": "groupedWebpage",
+     "citationPillId": 8,
+     "position": 9
+    },
+    {
+     "url": "https://docs.temporal.io/encyclopedia/retry-policies?trk=article-ssr-frontend-pulse_little-text-block",
+     "label": "",
+     "domain": "docs.temporal.io",
+     "type": "groupedWebpage",
+     "citationPillId": 9,
+     "position": 10
+    },
+    {
+     "url": "https://docs.temporal.io/evaluate/understanding-temporal",
+     "label": "",
+     "domain": "docs.temporal.io",
+     "type": "groupedWebpage",
+     "citationPillId": 10,
+     "position": 11
+    },
+    {
+     "url": "https://docs.temporal.io/workflow-execution?trk=article-ssr-frontend-pulse_little-text-block",
+     "label": "",
+     "domain": "docs.temporal.io",
+     "type": "groupedWebpage",
+     "citationPillId": 11,
+     "position": 12
+    },
+    {
+     "url": "https://github.com/inngest/website/blob/main/pages/docs/durable-execution/durable-workflows.mdx",
+     "label": "",
+     "domain": "github.com",
+     "type": "groupedWebpage",
+     "citationPillId": 12,
+     "position": 13
+    },
+    {
+     "url": "https://github.com/temporalio/documentation/blob/main/docs/develop/python/best-practices/error-handling.mdx",
+     "label": "",
+     "domain": "github.com",
+     "type": "groupedWebpage",
+     "citationPillId": 13,
+     "position": 14
+    },
+    {
+     "url": "https://hatchet.run/use-cases/durable-execution",
+     "label": "",
+     "domain": "hatchet.run",
+     "type": "groupedWebpage",
+     "citationPillId": 14,
+     "position": 15
+    },
+    {
+     "url": "https://llmbook.icsgen-ai.org/part-13-llmops-lifecycle/module-64-workflow-orchestration/section-64.2.html",
+     "label": "",
+     "domain": "llmbook.icsgen-ai.org",
+     "type": "groupedWebpage",
+     "citationPillId": 15,
+     "position": 16
+    },
+    {
+     "url": "https://pjsofts.github.io/blog/durable-execution-for-agents/",
+     "label": "",
+     "domain": "pjsofts.github.io",
+     "type": "groupedWebpage",
+     "citationPillId": 16,
+     "position": 17
+    },
+    {
+     "url": "https://pulse-forge.io/benchmarks/durable-agent-workflows",
+     "label": "",
+     "domain": "pulse-forge.io",
+     "type": "groupedWebpage",
+     "citationPillId": 17,
+     "position": 18
+    },
+    {
+     "url": "https://startupik.com/durable-execution-engine-ai-agents/",
+     "label": "",
+     "domain": "startupik.com",
+     "type": "groupedWebpage",
+     "citationPillId": 18,
+     "position": 19
+    },
+    {
+     "url": "https://ttlab.hopto.org/blog/culture/2026-05-15-workflow-engines-2026-temporal-inngest-trigger-hatchet-restate-dbos-airflow-deep-dive?lang=en",
+     "label": "",
+     "domain": "ttlab.hopto.org",
+     "type": "groupedWebpage",
+     "citationPillId": 19,
+     "position": 20
+    },
+    {
+     "url": "https://ttlab.hopto.org/blog/culture/2026-05-16-durable-workflow-engines-2026-temporal-restate-hatchet-inngest-trigger-dev-cadence-dapr-orchestra-deep-dive?lang=en",
+     "label": "",
+     "domain": "ttlab.hopto.org",
+     "type": "groupedWebpage",
+     "citationPillId": 20,
+     "position": 21
+    },
+    {
+     "url": "https://turion.ai/blog/temporal-vs-restate-vs-hatchet-vs-inngest-durable-execution-agents-2026/",
+     "label": "",
+     "domain": "turion.ai",
+     "type": "groupedWebpage",
+     "citationPillId": 21,
+     "position": 22
+    },
+    {
+     "url": "https://ultrametric.ai/arena/durable-workflows",
+     "label": "",
+     "domain": "ultrametric.ai",
+     "type": "groupedWebpage",
+     "citationPillId": 22,
+     "position": 23
+    },
+    {
+     "url": "https://www.dbos.dev/compare",
+     "label": "",
+     "domain": "dbos.dev",
+     "type": "groupedWebpage",
+     "citationPillId": 23,
+     "position": 24
+    },
+    {
+     "url": "https://www.martinfowler.com/articles/durable-execution-agents.html",
+     "label": "",
+     "domain": "martinfowler.com",
+     "type": "groupedWebpage",
+     "citationPillId": 24,
+     "position": 25
+    },
+    {
+     "url": "https://www.thoughtworks.com/content/dam/thoughtworks/documents/radar/2026/11/tr_technology_radar_vol_35_en.pdf",
+     "label": "",
+     "domain": "thoughtworks.com",
+     "type": "groupedWebpage",
+     "citationPillId": 25,
+     "position": 26
+    },
+    {
+     "url": "https://www.workflowbuilder.io/blog/ai-orchestration-tools",
+     "label": "",
+     "domain": "workflowbuilder.io",
+     "type": "groupedWebpage",
+     "citationPillId": 26,
+     "position": 27
+    }
+   ]
+  }
+ }
+}

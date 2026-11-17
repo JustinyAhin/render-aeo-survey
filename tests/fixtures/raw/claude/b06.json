@@ -1,0 +1,74 @@
+{
+ "engine": "claude",
+ "tool": "dataforseo.x.ai-optimization-claude-llm-responses-live",
+ "prompt_id": "b06",
+ "cluster": "b_ai",
+ "prompt": "What is a good durable workflow engine for AI tasks with retries?",
+ "fetched_at": "2026-11-17T04:48:14Z",
+ "treg": {
+  "http_status": 200,
+  "call_id": "6c8eadd6bc404f89bd6fc4d05cb988f4",
+  "charged_micro": 13788,
+  "hint": "feedback"
+ },
+ "result": {
+  "version": "0.1.20261103",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "time": "10.4039 sec.",
+  "cost": 0.013788,
+  "tasks_count": 1,
+  "tasks_error": 0,
+  "tasks": [
+   {
+    "id": "11170448-2171-0612-0000-4388d78936a6",
+    "status_code": 20000,
+    "status_message": "Ok.",
+    "time": "10.3891 sec.",
+    "cost": 0.013788,
+    "result_count": 1,
+    "path": [
+     "v3",
+     "ai_optimization",
+     "claude",
+     "llm_responses",
+     "live"
+    ],
+    "data": {
+     "api": "ai_optimization",
+     "function": "llm_responses",
+     "se": "claude",
+     "model_name": "claude-sonnet-4-5",
+     "user_prompt": "What is a good durable workflow engine for AI tasks with retries?",
+     "web_search": true,
+     "max_output_tokens": 1200
+    },
+    "result": [
+     {
+      "model_name": "claude-sonnet-4-5-20250929",
+      "input_tokens": 2236,
+      "output_tokens": 432,
+      "reasoning_tokens": 0,
+      "web_search": false,
+      "money_spent": 0.013188,
+      "datetime": "2026-11-17 04:48:13 +00:00",
+      "items": [
+       {
+        "type": "message",
+        "sections": [
+         {
+          "type": "text",
+          "text": "For AI tasks requiring durable workflows with retries, here are some excellent options:\n\n## **Temporal**\nOne of the most popular choices for durable workflows. It provides:\n- Built-in retry mechanisms with configurable policies\n- Automatic state persistence across failures\n- Strong consistency guarantees\n- Native support for long-running workflows\n- SDKs in multiple languages (Python, Go, TypeScript, Java, etc.)\n- Particularly well-suited for AI/ML pipelines that may have long-running or unpredictable execution times\n\n## **Prefect**\nDesigned specifically with data and ML workflows in mind:\n- Automatic retries with exponential backoff\n- Task-level caching\n- Dynamic workflow generation\n- Strong observability and monitoring\n- Python-native with a clean API\n- Good integration with ML tools\n\n## **Apache Airflow**\nA mature option for orchestrating complex workflows:\n- Configurable retry logic per task\n- Rich ecosystem of integrations\n- Good for scheduled/batch AI jobs\n- Strong community support\n- Can be heavier-weight for simpler use cases\n\n## **Inngest**\nA newer option gaining traction:\n- Event-driven architecture\n- Built-in retries and error handling\n- Serverless-friendly\n- Good for AI agents and async workflows\n- Simple developer experience\n\n## **AWS Step Functions** (if on AWS)\n- Managed service with built-in durability\n- Visual workflow designer\n- Automatic retries and error handling\n- Good integration with AWS services (SageMaker, Bedrock, Lambda)\n\n**My recommendation**: If you're building AI applications with complex, long-running tasks, **Temporal** is often the best choice due to its robust durability guarantees and flexibility. If you want something more Python-native and ML-focused, **Prefect** is excellent. The choice depends on your specific requirements around deployment model, language preferences, and infrastructure.",
+          "annotations": null
+         }
+        ]
+       }
+      ],
+      "fan_out_queries": null,
+      "search_results": null
+     }
+    ]
+   }
+  ]
+ }
+}
