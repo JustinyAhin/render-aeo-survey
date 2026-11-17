@@ -27,6 +27,7 @@ The diff uses only the (engine, prompt) pairs that both runs share, so a change 
 - **Small sample.** 40 prompts, about 176 answers per run. Per-cluster rates rest on 5 to 9 answers per engine.
 - **Brand detection is regex.** `Render` is case-sensitive and skips verb uses ("render the page"), but it can still miss or over-count. Stale-fact hits are candidates for a human to check, not confirmed errors.
 - **Scraped UIs and APIs differ.** The ChatGPT, Gemini and Google AI Mode engines are scrapes of the logged-out web UI (US). The OpenRouter engines measure the API models, which can answer differently. Do not mix the two in one trend line.
+- **`claude_api` searches only when the model decides to.** Search is not forced (Opus 5.5 does not accept a forced tool call, and the claude.ai app also decides for itself). An answer from memory has no citations. That is part of what this engine measures, not a failure.
 - **Engines change.** Models, search backends and UI layouts change without notice. A step change in one engine can be a vendor change, not a content change.
 
 ## Engines
